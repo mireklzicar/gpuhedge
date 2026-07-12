@@ -1,4 +1,4 @@
-# Roadmap
+# TODO / Roadmap
 
 Near term (order reflects the current plan, not promises):
 
@@ -16,6 +16,6 @@ Near term (order reflects the current plan, not promises):
 6. **A recurring cold-start dataset** — the same harness re-run periodically
    across providers/regions/cadences, published as data.
 
-Deliberately out of scope for now: hosted control plane, unified billing,
+Deliberately out of scope for now: unified billing,
 multi-tenant concurrency (the Cerebrium adapter is benchmark-safe only —
 see docs/provider-capabilities.md).

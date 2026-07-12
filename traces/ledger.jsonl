@@ -1,0 +1,464 @@
+{"kind": "charge", "stage": "setup", "provider": "runpod", "projected_usd": 0.046258, "billed_seconds": 91.17, "note": "runpod seed (17GB download)", "ts": "2026-07-11T18:15:32.056148+00:00"}
+{"kind": "charge", "stage": "setup", "provider": "runpod", "projected_usd": 0.019282, "billed_seconds": 3.01, "note": "runpod seed", "ts": "2026-07-11T18:23:13.716259+00:00"}
+{"kind": "charge", "stage": "setup", "provider": "modal", "projected_usd": 0.097697, "billed_seconds": 138.77, "note": "modal seed", "ts": "2026-07-11T18:25:29.669864+00:00"}
+{"kind": "charge", "stage": "setup", "provider": "runpod", "projected_usd": 0.03702, "billed_seconds": 60.98, "note": "runpod seed take 3 (fresh pods)", "ts": "2026-07-11T18:32:33.440625+00:00"}
+{"kind": "charge", "stage": "setup", "provider": "cerebrium", "projected_usd": 0.057408, "billed_seconds": 78, "note": "orphaned seed attempt (annotation bug)", "ts": "2026-07-11T19:34:20.694978+00:00"}
+{"kind": "charge", "stage": "setup", "provider": "cerebrium", "projected_usd": 0.075514, "billed_seconds": 102.6, "note": "seed: 17GB + engine + voice encode", "ts": "2026-07-11T19:34:20.695027+00:00"}
+{"kind": "charge", "stage": "qualify", "provider": "cerebrium", "projected_usd": 0.081127, "billed_seconds": 110.23, "note": "provisioning", "ts": "2026-07-11T19:36:34.473202+00:00"}
+{"kind": "charge", "stage": "qualify", "provider": "cerebrium", "projected_usd": 0.004253, "billed_seconds": 5.78, "note": "provisioning", "ts": "2026-07-11T19:37:25.297060+00:00"}
+{"kind": "charge", "stage": "qualify", "provider": "cerebrium", "projected_usd": 0.003677, "billed_seconds": 5.0, "note": "provisioning", "ts": "2026-07-11T19:38:15.298488+00:00"}
+{"kind": "charge", "stage": "qualify", "provider": "cerebrium", "projected_usd": 0.004725, "billed_seconds": 6.42, "note": "provisioning", "ts": "2026-07-11T19:39:06.761185+00:00"}
+{"kind": "charge", "stage": "qualify", "provider": "cerebrium", "projected_usd": 0.00405, "billed_seconds": 5.5, "note": "provisioning", "ts": "2026-07-11T19:39:57.309895+00:00"}
+{"kind": "charge", "stage": "qualify", "provider": "cerebrium", "projected_usd": 0.004137, "billed_seconds": 5.62, "note": "provisioning", "ts": "2026-07-11T19:40:47.947587+00:00"}
+{"kind": "charge", "stage": "qualify", "provider": "cerebrium", "projected_usd": 0.004188, "billed_seconds": 5.69, "note": "output test", "ts": "2026-07-11T19:40:53.639567+00:00"}
+{"kind": "charge", "stage": "qualify", "provider": "cerebrium", "projected_usd": 0.004544, "billed_seconds": null, "note": "cancel queued", "ts": "2026-07-11T19:40:59.817993+00:00"}
+{"kind": "charge", "stage": "qualify", "provider": "cerebrium", "projected_usd": 0.003596, "billed_seconds": null, "note": "cancel loading", "ts": "2026-07-11T19:41:04.704832+00:00"}
+{"kind": "charge", "stage": "qualify", "provider": "cerebrium", "projected_usd": 0.019137, "billed_seconds": null, "note": "cancel generating", "ts": "2026-07-11T19:41:30.706544+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.026974, "billed_seconds": 38.32, "note": "cold COMPLETED", "ts": "2026-07-11T19:42:56.281283+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003098, "billed_seconds": 4.4, "note": "warm companion", "ts": "2026-07-11T19:43:00.681585+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.076736, "billed_seconds": 104.26, "note": "cold COMPLETED", "ts": "2026-07-11T19:44:02.656579+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003816, "billed_seconds": 5.19, "note": "warm companion", "ts": "2026-07-11T19:44:07.842382+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.055601, "billed_seconds": 121.7, "note": "cold COMPLETED", "ts": "2026-07-11T19:44:19.615506+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001231, "billed_seconds": 4.02, "note": "warm companion", "ts": "2026-07-11T19:44:23.639926+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020044, "billed_seconds": 5.5, "note": "cold COMPLETED", "ts": "2026-07-11T19:46:39.360625+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001407, "billed_seconds": 4.6, "note": "warm companion", "ts": "2026-07-11T19:46:43.958515+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.016239, "billed_seconds": 22.06, "note": "cold COMPLETED", "ts": "2026-07-11T19:46:55.928322+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004655, "billed_seconds": 6.32, "note": "warm companion", "ts": "2026-07-11T19:47:02.254083+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.023219, "billed_seconds": 32.98, "note": "cold COMPLETED", "ts": "2026-07-11T19:47:06.845493+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003286, "billed_seconds": 4.67, "note": "warm companion", "ts": "2026-07-11T19:47:11.514111+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020625, "billed_seconds": 7.4, "note": "cold COMPLETED", "ts": "2026-07-11T19:49:29.685112+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001511, "billed_seconds": 4.94, "note": "warm companion", "ts": "2026-07-11T19:49:34.624940+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014926, "billed_seconds": 20.28, "note": "cold COMPLETED", "ts": "2026-07-11T19:49:42.572388+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003784, "billed_seconds": 5.14, "note": "warm companion", "ts": "2026-07-11T19:49:47.714965+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.027135, "billed_seconds": 38.54, "note": "cold COMPLETED", "ts": "2026-07-11T19:50:00.835060+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.00465, "billed_seconds": 6.6, "note": "warm companion", "ts": "2026-07-11T19:50:07.440141+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.069991, "billed_seconds": 95.1, "note": "cold COMPLETED", "ts": "2026-07-11T19:53:52.837689+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.068381, "billed_seconds": 97.13, "note": "cold COMPLETED", "ts": "2026-07-11T19:53:54.875115+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003728, "billed_seconds": 5.07, "note": "warm companion", "ts": "2026-07-11T19:53:57.906374+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.00385, "billed_seconds": 5.47, "note": "warm companion", "ts": "2026-07-11T19:54:00.344049+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.05425, "billed_seconds": 117.29, "note": "cold COMPLETED", "ts": "2026-07-11T19:54:15.016602+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001307, "billed_seconds": 4.27, "note": "warm companion", "ts": "2026-07-11T19:54:19.290688+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.025529, "billed_seconds": 36.26, "note": "cold COMPLETED", "ts": "2026-07-11T19:57:06.019415+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004569, "billed_seconds": 6.49, "note": "warm companion", "ts": "2026-07-11T19:57:12.509577+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.074465, "billed_seconds": 101.17, "note": "cold COMPLETED", "ts": "2026-07-11T19:58:10.931763+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003836, "billed_seconds": 5.21, "note": "warm companion", "ts": "2026-07-11T19:58:16.144781+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.054253, "billed_seconds": 117.3, "note": "cold COMPLETED", "ts": "2026-07-11T19:58:27.047243+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001221, "billed_seconds": 3.99, "note": "warm companion", "ts": "2026-07-11T19:58:31.038957+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020209, "billed_seconds": 6.04, "note": "cold COMPLETED", "ts": "2026-07-11T20:00:47.339200+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001233, "billed_seconds": 4.03, "note": "warm companion", "ts": "2026-07-11T20:00:51.369132+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.026712, "billed_seconds": 37.94, "note": "cold COMPLETED", "ts": "2026-07-11T20:01:19.261441+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003035, "billed_seconds": 4.31, "note": "warm companion", "ts": "2026-07-11T20:01:23.573144+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.072457, "billed_seconds": 98.45, "note": "cold COMPLETED", "ts": "2026-07-11T20:02:19.758886+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.00356, "billed_seconds": 4.84, "note": "warm companion", "ts": "2026-07-11T20:02:24.596532+00:00"}
+{"kind": "reconcile", "provider": "runpod", "actual_usd": 0.358001, "note": "auto block-1", "ts": "2026-07-11T20:02:25.557052+00:00"}
+{"kind": "reconcile", "provider": "modal", "actual_usd": 0.534116, "note": "auto block-1", "ts": "2026-07-11T20:02:25.557091+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014539, "billed_seconds": 19.75, "note": "cold COMPLETED", "ts": "2026-07-11T20:17:54.460273+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004423, "billed_seconds": 6.01, "note": "warm companion", "ts": "2026-07-11T20:18:00.471850+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.028761, "billed_seconds": 40.85, "note": "cold COMPLETED", "ts": "2026-07-11T20:18:15.074650+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.005091, "billed_seconds": 7.23, "note": "warm companion", "ts": "2026-07-11T20:18:22.307038+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.053871, "billed_seconds": 116.05, "note": "cold COMPLETED", "ts": "2026-07-11T20:19:29.847024+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001222, "billed_seconds": 3.99, "note": "warm companion", "ts": "2026-07-11T20:19:33.841787+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020212, "billed_seconds": 6.05, "note": "cold COMPLETED", "ts": "2026-07-11T20:21:50.163424+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001223, "billed_seconds": 4.0, "note": "warm companion", "ts": "2026-07-11T20:21:54.163419+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013802, "billed_seconds": 18.75, "note": "cold COMPLETED", "ts": "2026-07-11T20:22:02.877605+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.00353, "billed_seconds": 4.8, "note": "warm companion", "ts": "2026-07-11T20:22:07.674068+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.057476, "billed_seconds": 81.64, "note": "cold COMPLETED", "ts": "2026-07-11T20:23:05.763047+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004148, "billed_seconds": 5.89, "note": "warm companion", "ts": "2026-07-11T20:23:11.655930+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.01435, "billed_seconds": 19.5, "note": "cold COMPLETED", "ts": "2026-07-11T20:25:41.580686+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003839, "billed_seconds": 5.22, "note": "warm companion", "ts": "2026-07-11T20:25:46.797856+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.027052, "billed_seconds": 38.43, "note": "cold COMPLETED", "ts": "2026-07-11T20:26:00.508183+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.00449, "billed_seconds": 6.38, "note": "warm companion", "ts": "2026-07-11T20:26:06.888477+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.049225, "billed_seconds": 100.87, "note": "cold COMPLETED", "ts": "2026-07-11T20:27:02.943168+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001221, "billed_seconds": 3.99, "note": "warm companion", "ts": "2026-07-11T20:27:06.935423+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020227, "billed_seconds": 6.1, "note": "cold COMPLETED", "ts": "2026-07-11T20:29:23.299346+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001223, "billed_seconds": 4.0, "note": "warm companion", "ts": "2026-07-11T20:29:27.298157+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013702, "billed_seconds": 18.62, "note": "cold COMPLETED", "ts": "2026-07-11T20:29:35.820988+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003832, "billed_seconds": 5.21, "note": "warm companion", "ts": "2026-07-11T20:29:41.028728+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.028454, "billed_seconds": 40.42, "note": "cold COMPLETED", "ts": "2026-07-11T20:29:57.621554+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004087, "billed_seconds": 5.81, "note": "warm companion", "ts": "2026-07-11T20:30:03.427711+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020214, "billed_seconds": 6.06, "note": "cold COMPLETED", "ts": "2026-07-11T20:32:19.756683+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001222, "billed_seconds": 3.99, "note": "warm companion", "ts": "2026-07-11T20:32:23.751794+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013915, "billed_seconds": 18.91, "note": "cold COMPLETED", "ts": "2026-07-11T20:32:32.618078+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003542, "billed_seconds": 4.81, "note": "warm companion", "ts": "2026-07-11T20:32:37.431362+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.026561, "billed_seconds": 37.73, "note": "cold COMPLETED", "ts": "2026-07-11T20:32:51.440368+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004838, "billed_seconds": 6.87, "note": "warm companion", "ts": "2026-07-11T20:32:58.313433+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020221, "billed_seconds": 6.08, "note": "cold COMPLETED", "ts": "2026-07-11T20:35:14.654385+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001219, "billed_seconds": 3.98, "note": "warm companion", "ts": "2026-07-11T20:35:18.638980+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014004, "billed_seconds": 19.03, "note": "cold COMPLETED", "ts": "2026-07-11T20:35:27.605766+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003658, "billed_seconds": 4.97, "note": "warm companion", "ts": "2026-07-11T20:35:32.578527+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.027206, "billed_seconds": 38.65, "note": "cold COMPLETED", "ts": "2026-07-11T20:35:47.223731+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.002914, "billed_seconds": 4.14, "note": "warm companion", "ts": "2026-07-11T20:35:51.362765+00:00"}
+{"kind": "reconcile", "provider": "runpod", "actual_usd": 0.517943, "note": "auto block-2", "ts": "2026-07-11T20:35:52.458696+00:00"}
+{"kind": "reconcile", "provider": "modal", "actual_usd": 0.868663, "note": "auto block-2", "ts": "2026-07-11T20:35:52.458732+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.03167, "billed_seconds": 44.99, "note": "cold COMPLETED", "ts": "2026-07-11T20:51:45.044603+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.00431, "billed_seconds": 6.12, "note": "warm companion", "ts": "2026-07-11T20:51:51.172769+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.04939, "billed_seconds": 101.41, "note": "cold COMPLETED", "ts": "2026-07-11T20:52:41.180457+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001223, "billed_seconds": 4.0, "note": "warm companion", "ts": "2026-07-11T20:52:45.179813+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020912, "billed_seconds": 8.34, "note": "cold COMPLETED", "ts": "2026-07-11T20:55:03.794674+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001201, "billed_seconds": 3.92, "note": "warm companion", "ts": "2026-07-11T20:55:07.719954+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014544, "billed_seconds": 19.76, "note": "cold COMPLETED", "ts": "2026-07-11T20:55:16.510653+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003703, "billed_seconds": 5.03, "note": "warm companion", "ts": "2026-07-11T20:55:21.543190+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.026906, "billed_seconds": 38.22, "note": "cold COMPLETED", "ts": "2026-07-11T20:55:33.676938+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004278, "billed_seconds": 6.08, "note": "warm companion", "ts": "2026-07-11T20:55:39.754573+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020217, "billed_seconds": 6.07, "note": "cold COMPLETED", "ts": "2026-07-11T20:57:56.514610+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001227, "billed_seconds": 4.01, "note": "warm companion", "ts": "2026-07-11T20:58:00.524822+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014301, "billed_seconds": 19.43, "note": "cold COMPLETED", "ts": "2026-07-11T20:58:09.891442+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003942, "billed_seconds": 5.36, "note": "warm companion", "ts": "2026-07-11T20:58:15.248043+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.022454, "billed_seconds": 31.89, "note": "cold COMPLETED", "ts": "2026-07-11T20:58:22.354156+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003718, "billed_seconds": 5.28, "note": "warm companion", "ts": "2026-07-11T20:58:27.635322+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020225, "billed_seconds": 6.1, "note": "cold COMPLETED", "ts": "2026-07-11T21:00:43.995636+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001242, "billed_seconds": 4.06, "note": "warm companion", "ts": "2026-07-11T21:00:48.055587+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.01439, "billed_seconds": 19.55, "note": "cold COMPLETED", "ts": "2026-07-11T21:00:57.463152+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003494, "billed_seconds": 4.75, "note": "warm companion", "ts": "2026-07-11T21:01:02.211607+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.078591, "billed_seconds": 111.63, "note": "cold COMPLETED", "ts": "2026-07-11T21:02:29.544543+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003385, "billed_seconds": 4.81, "note": "warm companion", "ts": "2026-07-11T21:02:34.352403+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.029224, "billed_seconds": 41.51, "note": "cold COMPLETED", "ts": "2026-07-11T21:05:26.143495+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004111, "billed_seconds": 5.84, "note": "warm companion", "ts": "2026-07-11T21:05:31.982947+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.071194, "billed_seconds": 96.73, "note": "cold COMPLETED", "ts": "2026-07-11T21:06:21.364884+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.00443, "billed_seconds": 6.02, "note": "warm companion", "ts": "2026-07-11T21:06:27.385768+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.055142, "billed_seconds": 120.2, "note": "cold COMPLETED", "ts": "2026-07-11T21:06:44.830752+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001238, "billed_seconds": 4.05, "note": "warm companion", "ts": "2026-07-11T21:06:48.877859+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020196, "billed_seconds": 6.0, "note": "cold COMPLETED", "ts": "2026-07-11T21:09:05.122400+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001193, "billed_seconds": 3.9, "note": "warm companion", "ts": "2026-07-11T21:09:09.022880+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013984, "billed_seconds": 19.0, "note": "cold COMPLETED", "ts": "2026-07-11T21:09:18.125521+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003923, "billed_seconds": 5.33, "note": "warm companion", "ts": "2026-07-11T21:09:23.456599+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.027499, "billed_seconds": 39.06, "note": "cold COMPLETED", "ts": "2026-07-11T21:09:38.186388+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004314, "billed_seconds": 6.13, "note": "warm companion", "ts": "2026-07-11T21:09:44.315038+00:00"}
+{"kind": "reconcile", "provider": "runpod", "actual_usd": 0.731944, "note": "auto block-3", "ts": "2026-07-11T21:09:45.346170+00:00"}
+{"kind": "reconcile", "provider": "modal", "actual_usd": 1.237946, "note": "auto block-3", "ts": "2026-07-11T21:09:45.346190+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013855, "billed_seconds": 18.82, "note": "cold COMPLETED", "ts": "2026-07-11T21:25:10.766714+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003916, "billed_seconds": 5.32, "note": "warm companion", "ts": "2026-07-11T21:25:16.088034+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.027329, "billed_seconds": 38.82, "note": "cold COMPLETED", "ts": "2026-07-11T21:25:29.288521+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003297, "billed_seconds": 4.68, "note": "warm companion", "ts": "2026-07-11T21:25:33.971855+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.054002, "billed_seconds": 116.48, "note": "cold COMPLETED", "ts": "2026-07-11T21:26:46.814515+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001194, "billed_seconds": 3.9, "note": "warm companion", "ts": "2026-07-11T21:26:50.715667+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020181, "billed_seconds": 5.95, "note": "cold COMPLETED", "ts": "2026-07-11T21:29:06.943261+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001183, "billed_seconds": 3.87, "note": "warm companion", "ts": "2026-07-11T21:29:10.811103+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013911, "billed_seconds": 18.9, "note": "cold COMPLETED", "ts": "2026-07-11T21:29:19.896154+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003829, "billed_seconds": 5.2, "note": "warm companion", "ts": "2026-07-11T21:29:25.099777+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.027952, "billed_seconds": 39.71, "note": "cold COMPLETED", "ts": "2026-07-11T21:29:40.699328+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004148, "billed_seconds": 5.89, "note": "warm companion", "ts": "2026-07-11T21:29:46.591217+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020176, "billed_seconds": 5.94, "note": "cold COMPLETED", "ts": "2026-07-11T21:32:02.776138+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001195, "billed_seconds": 3.9, "note": "warm companion", "ts": "2026-07-11T21:32:06.681467+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014196, "billed_seconds": 19.29, "note": "cold COMPLETED", "ts": "2026-07-11T21:32:16.133183+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.00347, "billed_seconds": 4.71, "note": "warm companion", "ts": "2026-07-11T21:32:20.848598+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.019089, "billed_seconds": 27.11, "note": "cold COMPLETED", "ts": "2026-07-11T21:32:23.956483+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003358, "billed_seconds": 4.77, "note": "warm companion", "ts": "2026-07-11T21:32:28.727135+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020181, "billed_seconds": 5.95, "note": "cold COMPLETED", "ts": "2026-07-11T21:34:44.954855+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001194, "billed_seconds": 3.9, "note": "warm companion", "ts": "2026-07-11T21:34:48.856848+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013795, "billed_seconds": 18.74, "note": "cold COMPLETED", "ts": "2026-07-11T21:34:57.752253+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004121, "billed_seconds": 5.6, "note": "warm companion", "ts": "2026-07-11T21:35:03.351634+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.068115, "billed_seconds": 96.75, "note": "cold COMPLETED", "ts": "2026-07-11T21:36:15.762518+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003324, "billed_seconds": 4.72, "note": "warm companion", "ts": "2026-07-11T21:36:20.484559+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014152, "billed_seconds": 19.23, "note": "cold COMPLETED", "ts": "2026-07-11T21:38:49.959362+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004354, "billed_seconds": 5.92, "note": "warm companion", "ts": "2026-07-11T21:38:55.875120+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.027859, "billed_seconds": 39.57, "note": "cold COMPLETED", "ts": "2026-07-11T21:39:10.302389+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004078, "billed_seconds": 5.79, "note": "warm companion", "ts": "2026-07-11T21:39:16.094421+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.050334, "billed_seconds": 104.49, "note": "cold COMPLETED", "ts": "2026-07-11T21:40:15.215965+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001193, "billed_seconds": 3.9, "note": "warm companion", "ts": "2026-07-11T21:40:19.116333+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020185, "billed_seconds": 5.96, "note": "cold COMPLETED", "ts": "2026-07-11T21:42:35.337090+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001192, "billed_seconds": 3.89, "note": "warm companion", "ts": "2026-07-11T21:42:39.231910+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.01437, "billed_seconds": 19.52, "note": "cold COMPLETED", "ts": "2026-07-11T21:42:48.902988+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003829, "billed_seconds": 5.2, "note": "warm companion", "ts": "2026-07-11T21:42:54.106601+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.033676, "billed_seconds": 47.84, "note": "cold COMPLETED", "ts": "2026-07-11T21:43:17.213722+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.00398, "billed_seconds": 5.65, "note": "warm companion", "ts": "2026-07-11T21:43:22.867225+00:00"}
+{"kind": "reconcile", "provider": "runpod", "actual_usd": 0.93647, "note": "auto block-4", "ts": "2026-07-11T21:43:23.662335+00:00"}
+{"kind": "reconcile", "provider": "modal", "actual_usd": 1.602634, "note": "auto block-4", "ts": "2026-07-11T21:43:23.662374+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013844, "billed_seconds": 18.81, "note": "cold COMPLETED", "ts": "2026-07-11T21:59:00.757856+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004197, "billed_seconds": 5.7, "note": "warm companion", "ts": "2026-07-11T21:59:06.461361+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.020085, "billed_seconds": 28.53, "note": "cold COMPLETED", "ts": "2026-07-11T21:59:08.537678+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.002593, "billed_seconds": 3.68, "note": "warm companion", "ts": "2026-07-11T21:59:12.221761+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.055738, "billed_seconds": 122.15, "note": "cold COMPLETED", "ts": "2026-07-11T22:00:42.012760+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.0012, "billed_seconds": 3.92, "note": "warm companion", "ts": "2026-07-11T22:00:45.935081+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.02019, "billed_seconds": 5.98, "note": "cold COMPLETED", "ts": "2026-07-11T22:03:02.074230+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001199, "billed_seconds": 3.92, "note": "warm companion", "ts": "2026-07-11T22:03:05.993921+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013959, "billed_seconds": 18.97, "note": "cold COMPLETED", "ts": "2026-07-11T22:03:15.062965+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003137, "billed_seconds": 4.26, "note": "warm companion", "ts": "2026-07-11T22:03:19.326041+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.021266, "billed_seconds": 30.21, "note": "cold COMPLETED", "ts": "2026-07-11T22:03:26.303887+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.002937, "billed_seconds": 4.17, "note": "warm companion", "ts": "2026-07-11T22:03:30.475483+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013477, "billed_seconds": 18.31, "note": "cold COMPLETED", "ts": "2026-07-11T22:05:59.042099+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003529, "billed_seconds": 4.79, "note": "warm companion", "ts": "2026-07-11T22:06:03.837180+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.040372, "billed_seconds": 57.35, "note": "cold COMPLETED", "ts": "2026-07-11T22:06:38.076452+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004059, "billed_seconds": 5.77, "note": "warm companion", "ts": "2026-07-11T22:06:43.842927+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.051888, "billed_seconds": 109.57, "note": "cold COMPLETED", "ts": "2026-07-11T22:07:30.295081+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001199, "billed_seconds": 3.92, "note": "warm companion", "ts": "2026-07-11T22:07:34.214085+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014544, "billed_seconds": 19.76, "note": "cold COMPLETED", "ts": "2026-07-11T22:10:04.243720+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004168, "billed_seconds": 5.66, "note": "warm companion", "ts": "2026-07-11T22:10:09.907855+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.02645, "billed_seconds": 37.57, "note": "cold COMPLETED", "ts": "2026-07-11T22:10:22.053123+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004304, "billed_seconds": 6.11, "note": "warm companion", "ts": "2026-07-11T22:10:28.166331+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.055101, "billed_seconds": 120.07, "note": "cold COMPLETED", "ts": "2026-07-11T22:11:44.546461+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001806, "billed_seconds": 5.9, "note": "warm companion", "ts": "2026-07-11T22:11:50.449592+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020423, "billed_seconds": 6.74, "note": "cold COMPLETED", "ts": "2026-07-11T22:14:07.450317+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001314, "billed_seconds": 4.29, "note": "warm companion", "ts": "2026-07-11T22:14:11.743696+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.01424, "billed_seconds": 19.35, "note": "cold COMPLETED", "ts": "2026-07-11T22:14:20.058988+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004518, "billed_seconds": 6.14, "note": "warm companion", "ts": "2026-07-11T22:14:26.197945+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.027644, "billed_seconds": 39.27, "note": "cold COMPLETED", "ts": "2026-07-11T22:14:39.977186+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004395, "billed_seconds": 6.24, "note": "warm companion", "ts": "2026-07-11T22:14:46.220570+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020382, "billed_seconds": 6.61, "note": "cold COMPLETED", "ts": "2026-07-11T22:17:03.188875+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.00134, "billed_seconds": 4.38, "note": "warm companion", "ts": "2026-07-11T22:17:07.569651+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014864, "billed_seconds": 20.2, "note": "cold COMPLETED", "ts": "2026-07-11T22:17:16.781748+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003716, "billed_seconds": 5.05, "note": "warm companion", "ts": "2026-07-11T22:17:21.830484+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.028882, "billed_seconds": 41.02, "note": "cold COMPLETED", "ts": "2026-07-11T22:17:37.610095+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.002967, "billed_seconds": 4.21, "note": "warm companion", "ts": "2026-07-11T22:17:41.824669+00:00"}
+{"kind": "reconcile", "provider": "runpod", "actual_usd": 1.183847, "note": "auto block-5", "ts": "2026-07-11T22:17:42.850313+00:00"}
+{"kind": "reconcile", "provider": "modal", "actual_usd": 1.940051, "note": "auto block-5", "ts": "2026-07-11T22:17:42.850340+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014291, "billed_seconds": 19.42, "note": "cold COMPLETED", "ts": "2026-07-11T22:33:09.400689+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003998, "billed_seconds": 5.43, "note": "warm companion", "ts": "2026-07-11T22:33:14.833034+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.027679, "billed_seconds": 39.32, "note": "cold COMPLETED", "ts": "2026-07-11T22:33:27.869416+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004442, "billed_seconds": 6.31, "note": "warm companion", "ts": "2026-07-11T22:33:34.179067+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.054048, "billed_seconds": 116.63, "note": "cold COMPLETED", "ts": "2026-07-11T22:34:45.026802+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001193, "billed_seconds": 3.9, "note": "warm companion", "ts": "2026-07-11T22:34:48.927403+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014051, "billed_seconds": 19.09, "note": "cold COMPLETED", "ts": "2026-07-11T22:37:18.298114+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004291, "billed_seconds": 5.83, "note": "warm companion", "ts": "2026-07-11T22:37:24.133476+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.021361, "billed_seconds": 30.34, "note": "cold COMPLETED", "ts": "2026-07-11T22:37:29.551112+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003038, "billed_seconds": 4.32, "note": "warm companion", "ts": "2026-07-11T22:37:33.866541+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.051945, "billed_seconds": 109.75, "note": "cold COMPLETED", "ts": "2026-07-11T22:38:48.954126+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001197, "billed_seconds": 3.91, "note": "warm companion", "ts": "2026-07-11T22:38:52.865870+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014319, "billed_seconds": 19.45, "note": "cold COMPLETED", "ts": "2026-07-11T22:41:22.601782+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003556, "billed_seconds": 4.83, "note": "warm companion", "ts": "2026-07-11T22:41:27.433949+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.019832, "billed_seconds": 28.17, "note": "cold COMPLETED", "ts": "2026-07-11T22:41:31.316788+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003153, "billed_seconds": 4.48, "note": "warm companion", "ts": "2026-07-11T22:41:35.796226+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.045741, "billed_seconds": 89.48, "note": "cold COMPLETED", "ts": "2026-07-11T22:42:32.615629+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001204, "billed_seconds": 3.93, "note": "warm companion", "ts": "2026-07-11T22:42:36.550575+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020208, "billed_seconds": 6.04, "note": "cold COMPLETED", "ts": "2026-07-11T22:44:52.852437+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001189, "billed_seconds": 3.89, "note": "warm companion", "ts": "2026-07-11T22:44:56.738812+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014346, "billed_seconds": 19.49, "note": "cold COMPLETED", "ts": "2026-07-11T22:45:06.311749+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003911, "billed_seconds": 5.31, "note": "warm companion", "ts": "2026-07-11T22:45:11.625642+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.024804, "billed_seconds": 35.23, "note": "cold COMPLETED", "ts": "2026-07-11T22:45:22.051238+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004254, "billed_seconds": 6.04, "note": "warm companion", "ts": "2026-07-11T22:45:28.093904+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020283, "billed_seconds": 6.28, "note": "cold COMPLETED", "ts": "2026-07-11T22:47:44.636139+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001199, "billed_seconds": 3.92, "note": "warm companion", "ts": "2026-07-11T22:47:48.555781+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014456, "billed_seconds": 19.64, "note": "cold COMPLETED", "ts": "2026-07-11T22:47:57.996401+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003764, "billed_seconds": 5.11, "note": "warm companion", "ts": "2026-07-11T22:48:03.111357+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.025329, "billed_seconds": 35.98, "note": "cold COMPLETED", "ts": "2026-07-11T22:48:14.333308+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.00353, "billed_seconds": 5.01, "note": "warm companion", "ts": "2026-07-11T22:48:19.347315+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020194, "billed_seconds": 5.99, "note": "cold COMPLETED", "ts": "2026-07-11T22:50:35.627782+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001211, "billed_seconds": 3.96, "note": "warm companion", "ts": "2026-07-11T22:50:39.584857+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014208, "billed_seconds": 19.3, "note": "cold COMPLETED", "ts": "2026-07-11T22:50:48.948586+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004098, "billed_seconds": 5.57, "note": "warm companion", "ts": "2026-07-11T22:50:54.517838+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.021157, "billed_seconds": 30.05, "note": "cold COMPLETED", "ts": "2026-07-11T22:50:59.694202+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.002914, "billed_seconds": 4.14, "note": "warm companion", "ts": "2026-07-11T22:51:03.833252+00:00"}
+{"kind": "reconcile", "provider": "runpod", "actual_usd": 1.378395, "note": "auto block-6", "ts": "2026-07-11T22:51:04.871915+00:00"}
+{"kind": "reconcile", "provider": "modal", "actual_usd": 2.261671, "note": "auto block-6", "ts": "2026-07-11T22:51:04.871942+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020906, "billed_seconds": 8.32, "note": "cold COMPLETED", "ts": "2026-07-11T23:06:18.491831+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001202, "billed_seconds": 3.93, "note": "warm companion", "ts": "2026-07-11T23:06:22.419760+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014169, "billed_seconds": 19.25, "note": "cold COMPLETED", "ts": "2026-07-11T23:06:31.451349+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003738, "billed_seconds": 5.08, "note": "warm companion", "ts": "2026-07-11T23:06:36.531181+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.021158, "billed_seconds": 30.05, "note": "cold COMPLETED", "ts": "2026-07-11T23:06:40.349995+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.002731, "billed_seconds": 3.88, "note": "warm companion", "ts": "2026-07-11T23:06:44.229544+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020324, "billed_seconds": 6.42, "note": "cold COMPLETED", "ts": "2026-07-11T23:09:00.916834+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001253, "billed_seconds": 4.1, "note": "warm companion", "ts": "2026-07-11T23:09:05.013428+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013806, "billed_seconds": 18.76, "note": "cold COMPLETED", "ts": "2026-07-11T23:09:13.262054+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003898, "billed_seconds": 5.3, "note": "warm companion", "ts": "2026-07-11T23:09:18.558847+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.027018, "billed_seconds": 38.38, "note": "cold COMPLETED", "ts": "2026-07-11T23:09:32.881192+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004022, "billed_seconds": 5.71, "note": "warm companion", "ts": "2026-07-11T23:09:38.594344+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020229, "billed_seconds": 6.11, "note": "cold COMPLETED", "ts": "2026-07-11T23:11:54.965011+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001204, "billed_seconds": 3.94, "note": "warm companion", "ts": "2026-07-11T23:11:58.901103+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014205, "billed_seconds": 19.3, "note": "cold COMPLETED", "ts": "2026-07-11T23:12:08.162560+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003642, "billed_seconds": 4.95, "note": "warm companion", "ts": "2026-07-11T23:12:13.111275+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.028277, "billed_seconds": 40.17, "note": "cold COMPLETED", "ts": "2026-07-11T23:12:29.027066+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004213, "billed_seconds": 5.98, "note": "warm companion", "ts": "2026-07-11T23:12:35.011511+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020188, "billed_seconds": 5.97, "note": "cold COMPLETED", "ts": "2026-07-11T23:14:51.237973+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001306, "billed_seconds": 4.27, "note": "warm companion", "ts": "2026-07-11T23:14:55.507890+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.015342, "billed_seconds": 20.85, "note": "cold COMPLETED", "ts": "2026-07-11T23:15:06.116873+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004017, "billed_seconds": 5.46, "note": "warm companion", "ts": "2026-07-11T23:15:11.575148+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.058424, "billed_seconds": 82.99, "note": "cold COMPLETED", "ts": "2026-07-11T23:16:08.257412+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.00347, "billed_seconds": 4.93, "note": "warm companion", "ts": "2026-07-11T23:16:13.186579+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020171, "billed_seconds": 5.92, "note": "cold COMPLETED", "ts": "2026-07-11T23:18:29.286262+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001194, "billed_seconds": 3.9, "note": "warm companion", "ts": "2026-07-11T23:18:33.187971+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014198, "billed_seconds": 19.29, "note": "cold COMPLETED", "ts": "2026-07-11T23:18:42.662752+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.00361, "billed_seconds": 4.91, "note": "warm companion", "ts": "2026-07-11T23:18:47.568755+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.026005, "billed_seconds": 36.94, "note": "cold COMPLETED", "ts": "2026-07-11T23:19:00.308940+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004481, "billed_seconds": 6.36, "note": "warm companion", "ts": "2026-07-11T23:19:06.674003+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013897, "billed_seconds": 18.88, "note": "cold COMPLETED", "ts": "2026-07-11T23:21:35.846026+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004026, "billed_seconds": 5.47, "note": "warm companion", "ts": "2026-07-11T23:21:41.317768+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.029696, "billed_seconds": 42.18, "note": "cold COMPLETED", "ts": "2026-07-11T23:21:59.144387+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003331, "billed_seconds": 4.73, "note": "warm companion", "ts": "2026-07-11T23:22:03.876571+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.050493, "billed_seconds": 105.01, "note": "cold COMPLETED", "ts": "2026-07-11T23:23:01.968783+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001191, "billed_seconds": 3.89, "note": "warm companion", "ts": "2026-07-11T23:23:05.861687+00:00"}
+{"kind": "reconcile", "provider": "runpod", "actual_usd": 1.557289, "note": "auto block-7", "ts": "2026-07-11T23:23:06.877410+00:00"}
+{"kind": "reconcile", "provider": "modal", "actual_usd": 2.642154, "note": "auto block-7", "ts": "2026-07-11T23:23:06.877456+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014017, "billed_seconds": 19.04, "note": "cold COMPLETED", "ts": "2026-07-11T23:38:31.260006+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004654, "billed_seconds": 6.32, "note": "warm companion", "ts": "2026-07-11T23:38:37.584523+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.019081, "billed_seconds": 27.1, "note": "cold COMPLETED", "ts": "2026-07-11T23:38:38.886404+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003308, "billed_seconds": 4.7, "note": "warm companion", "ts": "2026-07-11T23:38:43.584994+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.04901, "billed_seconds": 100.16, "note": "cold COMPLETED", "ts": "2026-07-11T23:39:51.895571+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001204, "billed_seconds": 3.93, "note": "warm companion", "ts": "2026-07-11T23:39:55.829573+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020189, "billed_seconds": 5.98, "note": "cold COMPLETED", "ts": "2026-07-11T23:42:12.090001+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001795, "billed_seconds": 5.87, "note": "warm companion", "ts": "2026-07-11T23:42:17.956644+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014056, "billed_seconds": 19.1, "note": "cold COMPLETED", "ts": "2026-07-11T23:42:25.215153+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004397, "billed_seconds": 5.97, "note": "warm companion", "ts": "2026-07-11T23:42:31.189775+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.020694, "billed_seconds": 29.39, "note": "cold COMPLETED", "ts": "2026-07-11T23:42:35.511095+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003593, "billed_seconds": 5.1, "note": "warm companion", "ts": "2026-07-11T23:42:40.615600+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020194, "billed_seconds": 5.99, "note": "cold COMPLETED", "ts": "2026-07-11T23:44:56.789439+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001197, "billed_seconds": 3.91, "note": "warm companion", "ts": "2026-07-11T23:45:00.702879+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013566, "billed_seconds": 18.43, "note": "cold COMPLETED", "ts": "2026-07-11T23:45:09.233352+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004016, "billed_seconds": 5.46, "note": "warm companion", "ts": "2026-07-11T23:45:14.690385+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.020972, "billed_seconds": 29.79, "note": "cold COMPLETED", "ts": "2026-07-11T23:45:20.590368+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003258, "billed_seconds": 4.63, "note": "warm companion", "ts": "2026-07-11T23:45:25.218756+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.02019, "billed_seconds": 5.98, "note": "cold COMPLETED", "ts": "2026-07-11T23:47:41.467946+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001258, "billed_seconds": 4.11, "note": "warm companion", "ts": "2026-07-11T23:47:45.579882+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014652, "billed_seconds": 19.91, "note": "cold COMPLETED", "ts": "2026-07-11T23:47:55.403385+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004301, "billed_seconds": 5.84, "note": "warm companion", "ts": "2026-07-11T23:48:01.248785+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.020245, "billed_seconds": 28.76, "note": "cold COMPLETED", "ts": "2026-07-11T23:48:04.251899+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.00288, "billed_seconds": 4.09, "note": "warm companion", "ts": "2026-07-11T23:48:08.342321+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.013053, "billed_seconds": 17.73, "note": "cold COMPLETED", "ts": "2026-07-11T23:50:36.318691+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003632, "billed_seconds": 4.94, "note": "warm companion", "ts": "2026-07-11T23:50:41.254908+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.018815, "billed_seconds": 26.73, "note": "cold COMPLETED", "ts": "2026-07-11T23:50:45.308731+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.002833, "billed_seconds": 4.02, "note": "warm companion", "ts": "2026-07-11T23:50:49.332877+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.047271, "billed_seconds": 94.48, "note": "cold COMPLETED", "ts": "2026-07-11T23:51:53.058052+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001309, "billed_seconds": 4.28, "note": "warm companion", "ts": "2026-07-11T23:51:57.336997+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020193, "billed_seconds": 5.99, "note": "cold COMPLETED", "ts": "2026-07-11T23:54:13.751771+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001199, "billed_seconds": 3.92, "note": "warm companion", "ts": "2026-07-11T23:54:17.670053+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.019949, "billed_seconds": 28.34, "note": "cold COMPLETED", "ts": "2026-07-11T23:54:36.100662+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.002761, "billed_seconds": 3.92, "note": "warm companion", "ts": "2026-07-11T23:54:40.022039+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.075036, "billed_seconds": 101.95, "note": "cold COMPLETED", "ts": "2026-07-11T23:55:49.717159+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003359, "billed_seconds": 4.56, "note": "warm companion", "ts": "2026-07-11T23:55:54.281523+00:00"}
+{"kind": "reconcile", "provider": "runpod", "actual_usd": 1.742421, "note": "auto block-8", "ts": "2026-07-11T23:55:56.484859+00:00"}
+{"kind": "reconcile", "provider": "modal", "actual_usd": 2.893415, "note": "auto block-8", "ts": "2026-07-11T23:55:56.484891+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.02013, "billed_seconds": 5.78, "note": "cold COMPLETED", "ts": "2026-07-11T23:56:48.382998+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.00393, "billed_seconds": 5.34, "note": "cold COMPLETED", "ts": "2026-07-11T23:56:49.349855+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001366, "billed_seconds": 4.46, "note": "warm companion", "ts": "2026-07-11T23:56:52.848683+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003705, "billed_seconds": 5.03, "note": "warm companion", "ts": "2026-07-11T23:56:54.385119+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.020583, "billed_seconds": 29.24, "note": "cold COMPLETED", "ts": "2026-07-11T23:57:11.950624+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003012, "billed_seconds": 4.28, "note": "warm companion", "ts": "2026-07-11T23:57:16.229261+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020203, "billed_seconds": 6.02, "note": "cold COMPLETED", "ts": "2026-07-11T23:59:32.525862+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001222, "billed_seconds": 3.99, "note": "warm companion", "ts": "2026-07-11T23:59:36.519416+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014152, "billed_seconds": 19.23, "note": "cold COMPLETED", "ts": "2026-07-11T23:59:45.735556+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.004002, "billed_seconds": 5.44, "note": "warm companion", "ts": "2026-07-11T23:59:51.173523+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.043617, "billed_seconds": 61.96, "note": "cold COMPLETED", "ts": "2026-07-12T00:00:28.462533+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003152, "billed_seconds": 4.48, "note": "warm companion", "ts": "2026-07-12T00:00:32.940411+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020188, "billed_seconds": 5.97, "note": "cold COMPLETED", "ts": "2026-07-12T00:02:49.138493+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001186, "billed_seconds": 3.87, "note": "warm companion", "ts": "2026-07-12T00:02:53.014279+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014302, "billed_seconds": 19.43, "note": "cold COMPLETED", "ts": "2026-07-12T00:03:02.600644+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003869, "billed_seconds": 5.26, "note": "warm companion", "ts": "2026-07-12T00:03:07.858573+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.051973, "billed_seconds": 73.83, "note": "cold COMPLETED", "ts": "2026-07-12T00:03:56.993243+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.00442, "billed_seconds": 6.28, "note": "warm companion", "ts": "2026-07-12T00:04:03.271778+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020197, "billed_seconds": 6.0, "note": "cold COMPLETED", "ts": "2026-07-12T00:06:19.526000+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001203, "billed_seconds": 3.93, "note": "warm companion", "ts": "2026-07-12T00:06:23.460117+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014155, "billed_seconds": 19.23, "note": "cold COMPLETED", "ts": "2026-07-12T00:06:32.759992+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003847, "billed_seconds": 5.23, "note": "warm companion", "ts": "2026-07-12T00:06:37.987507+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.069017, "billed_seconds": 98.03, "note": "cold COMPLETED", "ts": "2026-07-12T00:07:51.562168+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003356, "billed_seconds": 4.77, "note": "warm companion", "ts": "2026-07-12T00:07:56.328749+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020189, "billed_seconds": 5.98, "note": "cold COMPLETED", "ts": "2026-07-12T00:10:12.621868+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001204, "billed_seconds": 3.93, "note": "warm companion", "ts": "2026-07-12T00:10:16.555741+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.014159, "billed_seconds": 19.24, "note": "cold COMPLETED", "ts": "2026-07-12T00:10:25.885261+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003787, "billed_seconds": 5.15, "note": "warm companion", "ts": "2026-07-12T00:10:31.031807+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.026622, "billed_seconds": 37.82, "note": "cold COMPLETED", "ts": "2026-07-12T00:10:44.462364+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.004147, "billed_seconds": 5.89, "note": "warm companion", "ts": "2026-07-12T00:10:50.352580+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.020196, "billed_seconds": 6.0, "note": "cold COMPLETED", "ts": "2026-07-12T00:13:06.624316+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "runpod", "projected_usd": 0.001197, "billed_seconds": 3.91, "note": "warm companion", "ts": "2026-07-12T00:13:10.535391+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.01356, "billed_seconds": 18.42, "note": "cold COMPLETED", "ts": "2026-07-12T00:13:19.055812+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "cerebrium", "projected_usd": 0.003595, "billed_seconds": 4.88, "note": "warm companion", "ts": "2026-07-12T00:13:23.940817+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.031539, "billed_seconds": 44.8, "note": "cold COMPLETED", "ts": "2026-07-12T00:13:45.431200+00:00"}
+{"kind": "charge", "stage": "moss", "provider": "modal", "projected_usd": 0.003338, "billed_seconds": 4.74, "note": "warm companion", "ts": "2026-07-12T00:13:50.173498+00:00"}
+{"kind": "reconcile", "provider": "runpod", "actual_usd": 1.895904, "note": "auto block-9", "ts": "2026-07-12T00:13:51.310540+00:00"}
+{"kind": "reconcile", "provider": "modal", "actual_usd": 3.20355, "note": "auto block-9", "ts": "2026-07-12T00:13:51.310561+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.019566, "billed_seconds": 3.94, "note": "winner", "ts": "2026-07-12T00:13:59.964869+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "modal", "projected_usd": 0.039854, "billed_seconds": 56.61, "note": "winner", "ts": "2026-07-12T00:17:17.454405+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.038927, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T00:17:17.454478+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.02019, "billed_seconds": 5.98, "note": "winner", "ts": "2026-07-12T00:19:33.702729+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020205, "billed_seconds": 6.03, "note": "winner", "ts": "2026-07-12T00:21:50.005036+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "modal", "projected_usd": 0.019931, "billed_seconds": 28.31, "note": "winner", "ts": "2026-07-12T00:24:39.247356+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.030283, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T00:24:39.247425+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.02026, "billed_seconds": 6.21, "note": "winner", "ts": "2026-07-12T00:26:55.724048+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020191, "billed_seconds": 5.98, "note": "winner", "ts": "2026-07-12T00:29:11.979035+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.0202, "billed_seconds": 6.01, "note": "winner", "ts": "2026-07-12T00:31:28.200425+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020209, "billed_seconds": 6.04, "note": "winner", "ts": "2026-07-12T00:33:44.477229+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.02027, "billed_seconds": 6.24, "note": "winner", "ts": "2026-07-12T00:36:00.880290+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020186, "billed_seconds": 5.97, "note": "winner", "ts": "2026-07-12T00:38:17.113708+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.014201, "billed_seconds": 19.3, "note": "winner", "ts": "2026-07-12T00:40:59.521112+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.028196, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T00:40:59.521182+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020364, "billed_seconds": 6.55, "note": "winner", "ts": "2026-07-12T00:43:16.378959+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020184, "billed_seconds": 5.96, "note": "winner", "ts": "2026-07-12T00:45:32.599171+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020225, "billed_seconds": 6.1, "note": "winner", "ts": "2026-07-12T00:47:48.960326+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020259, "billed_seconds": 6.21, "note": "winner", "ts": "2026-07-12T00:50:05.439438+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020308, "billed_seconds": 6.37, "note": "winner", "ts": "2026-07-12T00:52:22.053349+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020195, "billed_seconds": 6.0, "note": "winner", "ts": "2026-07-12T00:54:38.330599+00:00"}
+{"kind": "charge", "stage": "state_aware", "provider": "cerebrium", "projected_usd": 0.013733, "billed_seconds": 18.66, "note": "winner", "ts": "2026-07-12T11:41:53.059061+00:00"}
+{"kind": "charge", "stage": "state_aware", "provider": "runpod", "projected_usd": 0.020281, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T11:41:53.059126+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014047, "billed_seconds": 19.08, "note": "winner", "ts": "2026-07-12T11:59:48.243420+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.019731, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T11:59:48.243475+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.015231, "billed_seconds": 20.69, "note": "winner", "ts": "2026-07-12T12:02:24.114192+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020014, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T12:02:24.114246+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014286, "billed_seconds": 19.41, "note": "winner", "ts": "2026-07-12T12:04:56.920647+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.019473, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T12:04:56.920699+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014128, "billed_seconds": 19.2, "note": "winner", "ts": "2026-07-12T12:07:35.605308+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.027107, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T12:07:35.605361+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014139, "billed_seconds": 19.21, "note": "winner", "ts": "2026-07-12T12:10:08.234896+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.019479, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T12:10:08.234948+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.051894, "billed_seconds": 109.59, "note": "single", "ts": "2026-07-12T12:14:09.533515+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020183, "billed_seconds": 5.96, "note": "single", "ts": "2026-07-12T12:16:25.569638+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020206, "billed_seconds": 6.03, "note": "single", "ts": "2026-07-12T12:18:41.684686+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020248, "billed_seconds": 6.17, "note": "single", "ts": "2026-07-12T12:20:57.885599+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020186, "billed_seconds": 5.97, "note": "single", "ts": "2026-07-12T12:23:13.918992+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.019782, "billed_seconds": 4.65, "note": "single", "ts": "2026-07-12T12:25:30.419135+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020366, "billed_seconds": 6.56, "note": "single", "ts": "2026-07-12T12:27:47.068429+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020349, "billed_seconds": 6.5, "note": "single", "ts": "2026-07-12T12:30:03.671270+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020206, "billed_seconds": 6.03, "note": "single", "ts": "2026-07-12T12:32:19.804392+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.02018, "billed_seconds": 5.95, "note": "single", "ts": "2026-07-12T12:34:35.815929+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020251, "billed_seconds": 6.18, "note": "winner", "ts": "2026-07-12T12:36:53.835439+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020328, "billed_seconds": 6.43, "note": "winner", "ts": "2026-07-12T12:39:10.369304+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.01383, "billed_seconds": 18.79, "note": "winner", "ts": "2026-07-12T12:41:52.000939+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.028012, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T12:41:52.000996+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.013602, "billed_seconds": 18.48, "note": "winner", "ts": "2026-07-12T12:44:32.665473+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.027713, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T12:44:32.665538+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.013994, "billed_seconds": 19.01, "note": "winner", "ts": "2026-07-12T12:47:13.223583+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.02768, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T12:47:13.223648+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.058354, "billed_seconds": 130.7, "note": "single", "ts": "2026-07-12T12:51:35.420267+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020185, "billed_seconds": 5.96, "note": "single", "ts": "2026-07-12T12:53:51.484802+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020414, "billed_seconds": 6.71, "note": "single", "ts": "2026-07-12T12:56:08.299517+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020199, "billed_seconds": 6.01, "note": "single", "ts": "2026-07-12T12:58:24.404395+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.020209, "billed_seconds": 6.04, "note": "single", "ts": "2026-07-12T13:00:40.532981+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020192, "billed_seconds": 5.99, "note": "winner", "ts": "2026-07-12T13:02:58.387762+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020182, "billed_seconds": 5.96, "note": "winner", "ts": "2026-07-12T13:05:14.444791+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.020259, "billed_seconds": 6.21, "note": "winner", "ts": "2026-07-12T13:07:30.761773+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.01413, "billed_seconds": 19.2, "note": "winner", "ts": "2026-07-12T13:10:12.149225+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.027934, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T13:10:12.149276+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.014113, "billed_seconds": 19.17, "note": "winner", "ts": "2026-07-12T13:12:53.308442+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.027863, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T13:12:53.308494+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014177, "billed_seconds": 19.26, "note": "winner", "ts": "2026-07-12T13:46:56.332104+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014097, "billed_seconds": 19.15, "note": "winner", "ts": "2026-07-12T13:49:28.701142+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.074257, "billed_seconds": 100.89, "note": "winner", "ts": "2026-07-12T13:53:23.026696+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.013697, "billed_seconds": 18.61, "note": "winner", "ts": "2026-07-12T13:55:55.049506+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014437, "billed_seconds": 19.62, "note": "winner", "ts": "2026-07-12T13:58:27.902455+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.013166, "billed_seconds": 17.89, "note": "winner", "ts": "2026-07-12T14:01:00.985363+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014, "billed_seconds": 19.02, "note": "winner", "ts": "2026-07-12T14:03:33.362905+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014125, "billed_seconds": 19.19, "note": "winner", "ts": "2026-07-12T14:06:05.887872+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014473, "billed_seconds": 19.66, "note": "winner", "ts": "2026-07-12T14:08:38.854656+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.013595, "billed_seconds": 18.47, "note": "winner", "ts": "2026-07-12T14:11:10.636547+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.015224, "billed_seconds": 20.69, "note": "winner", "ts": "2026-07-12T14:13:46.454743+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014229, "billed_seconds": 19.33, "note": "winner", "ts": "2026-07-12T14:16:19.195157+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.013597, "billed_seconds": 18.47, "note": "winner", "ts": "2026-07-12T14:18:51.039876+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.014185, "billed_seconds": 19.27, "note": "winner", "ts": "2026-07-12T14:21:23.651844+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "cerebrium", "projected_usd": 0.013502, "billed_seconds": 18.35, "note": "winner", "ts": "2026-07-12T14:23:55.466435+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.014351, "billed_seconds": 19.5, "note": "winner", "ts": "2026-07-12T14:26:37.642507+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.013797, "billed_seconds": 18.75, "note": "winner", "ts": "2026-07-12T14:29:17.581697+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.013795, "billed_seconds": 18.74, "note": "winner", "ts": "2026-07-12T14:31:57.612379+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.023975, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T14:31:57.612445+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.013261, "billed_seconds": 18.02, "note": "winner", "ts": "2026-07-12T14:34:36.923561+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.023185, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T14:34:36.923619+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.01434, "billed_seconds": 19.48, "note": "winner", "ts": "2026-07-12T14:37:17.539501+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.019999, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T14:37:17.539570+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.014033, "billed_seconds": 19.07, "note": "winner", "ts": "2026-07-12T14:39:59.509061+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.02138, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T14:39:59.509113+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.013601, "billed_seconds": 18.48, "note": "winner", "ts": "2026-07-12T14:42:39.220485+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.024296, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T14:42:39.225488+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.014533, "billed_seconds": 19.75, "note": "winner", "ts": "2026-07-12T14:45:20.946009+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.01411, "billed_seconds": 19.17, "note": "winner", "ts": "2026-07-12T14:48:01.264556+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "cerebrium", "projected_usd": 0.014015, "billed_seconds": 19.04, "note": "winner", "ts": "2026-07-12T14:50:41.547884+00:00"}
+{"kind": "charge", "stage": "live_hedge", "provider": "runpod", "projected_usd": 0.018749, "billed_seconds": null, "note": "loser before cancel", "ts": "2026-07-12T14:50:41.547944+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.076771, "billed_seconds": 190.89, "note": "single", "ts": "2026-07-12T14:56:04.147406+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.062788, "billed_seconds": 145.19, "note": "single", "ts": "2026-07-12T15:00:39.405816+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.065872, "billed_seconds": 155.27, "note": "single", "ts": "2026-07-12T15:05:24.772024+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.072084, "billed_seconds": 175.57, "note": "single", "ts": "2026-07-12T15:10:30.443854+00:00"}
+{"kind": "charge", "stage": "validation", "provider": "runpod", "projected_usd": 0.079819, "billed_seconds": 200.85, "note": "single", "ts": "2026-07-12T15:16:01.352678+00:00"}
+{"kind": "charge", "stage": "cancel_audit", "provider": "runpod", "projected_usd": 0.018703, "billed_seconds": null, "note": "early cancel", "ts": "2026-07-12T15:16:07.548645+00:00"}
+{"kind": "charge", "stage": "cancel_audit", "provider": "runpod", "projected_usd": 0.018875, "billed_seconds": null, "note": "late cancel", "ts": "2026-07-12T15:20:32.771349+00:00"}
+{"kind": "charge", "stage": "cancel_audit", "provider": "runpod", "projected_usd": 0.018897, "billed_seconds": null, "note": "late cancel", "ts": "2026-07-12T15:23:03.204155+00:00"}
+{"kind": "charge", "stage": "cancel_audit", "provider": "cerebrium", "projected_usd": 0.013685, "billed_seconds": null, "note": "late cancel", "ts": "2026-07-12T15:40:16.889470+00:00"}
+{"kind": "charge", "stage": "cancel_audit", "provider": "cerebrium", "projected_usd": 0.014264, "billed_seconds": null, "note": "late cancel", "ts": "2026-07-12T15:42:46.351197+00:00"}
+{"kind": "charge", "stage": "cancel_audit", "provider": "modal", "projected_usd": 0.001568, "billed_seconds": null, "note": "early cancel", "ts": "2026-07-12T16:34:21.989683+00:00"}
+{"kind": "charge", "stage": "cancel_audit", "provider": "modal", "projected_usd": 0.001135, "billed_seconds": null, "note": "early cancel", "ts": "2026-07-12T16:35:08.627571+00:00"}
+{"kind": "charge", "stage": "cancel_audit", "provider": "modal", "projected_usd": 0.011229, "billed_seconds": null, "note": "late cancel", "ts": "2026-07-12T16:36:09.623940+00:00"}
+{"kind": "charge", "stage": "cancel_audit", "provider": "modal", "projected_usd": 0.011684, "billed_seconds": null, "note": "late cancel", "ts": "2026-07-12T16:37:11.266230+00:00"}

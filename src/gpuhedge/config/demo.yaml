@@ -1,0 +1,99 @@
+# GPUHedge no-cloud demo — two simulated providers race through the REAL
+# policy engines. No accounts, no credentials, no spend:  `gpuhedge demo`.
+#
+# "flashy" imitates a bimodal serverless primary (usually 6 s end to end,
+# sometimes ~90 s behind a long queue delay — the two modes the 2026-07
+# benchmark measured on a real provider). "steady" imitates a slower but
+# tight-tailed hedge — with a rare tail of its own (the 104 s hedge outlier
+# the live validation caught). "reserve" imitates a predictable third
+# provider the cascade escalates to when the hedge enters that tail. Times
+# are simulated seconds, compressed by sim.time_scale at runtime.
+
+model: sim-demo
+
+request:
+  text: "Hello from the GPUHedge demo."
+  voice_id: demo
+  voice_dir: demo
+  language: English
+  reference: none
+
+providers:
+  flashy:
+    role: primary
+    gpu: SIM-24GB
+    gpu_vram_gb: 24
+    region: sim
+    gpu_rate_per_s: 0.000306
+    billed_rate_per_s: 0.000306
+    idle_billed_seconds: 60
+    deployed: true
+    adapter: sim
+    sim:
+      seed: 11
+      time_scale: 0.05          # 20x faster than real time
+      fast: {p: 0.67, queue_s: [1.1, 2.0], run_s: [4.0, 6.5]}
+      slow: {queue_s: [9.0, 27.0], run_s: [80.0, 95.0]}
+      invalid_p: 0.04
+
+  steady:
+    role: hedge
+    gpu: SIM-48GB
+    gpu_vram_gb: 48
+    region: sim
+    gpu_rate_per_s: 0.000542
+    billed_rate_per_s: 0.000736
+    idle_billed_seconds: 0
+    deployed: true
+    adapter: sim
+    sim:
+      seed: 44
+      time_scale: 0.05
+      fast: {p: 0.95, queue_s: [0.5, 1.5], run_s: [14.0, 19.0]}
+      slow: {queue_s: [3.0, 6.0], run_s: [80.0, 100.0]}
+      invalid_p: 0.02
+
+  reserve:
+    role: fallback
+    gpu: SIM-48GB
+    gpu_vram_gb: 48
+    region: sim
+    gpu_rate_per_s: 0.000542
+    billed_rate_per_s: 0.000736
+    idle_billed_seconds: 0
+    deployed: true
+    adapter: sim
+    sim:
+      seed: 37
+      time_scale: 0.05
+      fast: {p: 1.0, queue_s: [1.0, 2.0], run_s: [24.0, 30.0]}
+      invalid_p: 0.0
+
+policy:
+  primary: flashy
+  hedge_after_ms: 10000         # simulated ms; scaled by time_scale at runtime
+  hedge_choose_one_of: [steady]
+  fallback: reserve             # cascade escalation target
+  max_active_jobs: 2
+  winner: first_valid_output
+
+slo:
+  primary_deadline_s: 60
+  report_deadlines_s: [30, 60, 90, 120]
+  max_miss_probability: 0.05
+
+timeouts_s:
+  moss: 300                     # simulated seconds
+
+stages: {}
+
+budget:
+  currency: USD
+  operational_stop: 1000000
+  absolute_ceiling: 1000000
+  gates: {}
+
+qualification: {}
+
+output:
+  trace_dir: traces

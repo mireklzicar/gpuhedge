@@ -1,0 +1,153 @@
+# GPUHedge — three-provider MOSS-TTS cold-start benchmark ($50 plan).
+#
+# This file is the single source of truth for the plan in
+# benchmarks/2026-07-moss/methodology.md. Code reads it; it hard-codes nothing.
+# Rates are approximate (2026-07) and MUST be reconciled against provider-
+# reported cost after every six-round block (telemetry/ledger.py).
+
+model: MOSS-TTS-v1.5   # OpenMOSS-Team/MOSS-TTS-v1.5
+
+# The one fixed request replayed on every provider. ~70 chars -> ~5 s audio,
+# cached reference codes, identical voice/revision (benchmarks/2026-07-moss/methodology.md).
+request:
+  text: "A quick generation to measure cold start across three serverless GPU clouds."
+  voice_id: english_american_05_male_senior_hifi_english_american_male_speaker_005
+  voice_dir: english/american/english_american_05_male_senior_hifi_english_american_male_speaker_005
+  language: English
+  reference: cloned
+
+# ---------------------------------------------------------------- providers
+# billed_rate_per_s = all-in $/s used by the projected-cost ledger.
+# gpu_rate_per_s     = headline GPU-only rate (for reporting).
+# Modal & Cerebrium bill CPU + RAM on top of GPU; billed_rate_per_s folds that in.
+providers:
+  runpod:
+    role: primary                    # cheap/fast 4090 arm (FlashBoot bimodal)
+    gpu: RTX_4090
+    gpu_vram_gb: 24
+    tokenizer_device: cpu            # 24 GB VRAM can't hold fp32 tokenizer + bf16 LM
+    region: EU-RO-1                  # network volume gpuhedge-hf pins the endpoint here
+    gpu_rate_per_s: 0.000306         # ~$1.10/hr serverless 4090
+    billed_rate_per_s: 0.000306      # RunPod bundles CPU/RAM into the GPU rate
+    idle_billed_seconds: 60          # idle_timeout=60 s billed after each job
+    endpoint: moss4090
+    endpoint_id: YOUR_ENDPOINT_ID    # printed by `flash deploy` (deploy/runpod/)
+    deployed: false                  # set true once your endpoint is up
+
+  modal:
+    role: hedge                      # reliable 48 GB L40S arm, long scheduling tail
+    gpu: L40S
+    gpu_vram_gb: 48
+    tokenizer_device: gpu
+    region: us-any                   # Modal schedules; not user-pinned
+    gpu_rate_per_s: 0.000542         # ~$1.95/hr L40S
+    billed_rate_per_s: 0.000704      # +~30% for cpu=8 / memory=32 GB billed separately
+    idle_billed_seconds: 0           # scaledown_window kept long; not billed per-round here
+    app: gpuhedge-moss               # created by `modal deploy` (deploy/modal/app.py)
+    cls: MossTTS
+    method: tts
+    deployed: false                  # set true after `modal deploy`
+
+  cerebrium:
+    role: hedge                      # 48 GB L40S — hardware-matched control vs Modal
+    gpu: L40S
+    gpu_vram_gb: 48
+    tokenizer_device: gpu
+    region: us-east-1                # Cerebrium default; see OPEN QUESTION in README re EU
+    gpu_rate_per_s: 0.000542         # listed L40S rate
+    billed_rate_per_s: 0.000736      # ~$2.65/hr all-in with 64 GB RAM + 8 vCPU
+    idle_billed_seconds: 0
+    app: gpuhedge-moss               # created by `cerebrium deploy` (deploy/cerebrium/)
+    app_id: YOUR_PROJECT_ID-gpuhedge-moss  # REST runs/cancel path component
+    function: tts
+    project_id: YOUR_PROJECT_ID      # `cerebrium projects list`
+    deployed: false                  # set true after `cerebrium deploy`; Stage 1 qualifies it
+
+# ------------------------------------------------------------------- policy
+# Provisional production default (benchmarks/2026-07-moss/methodology.md): RunPod primary, hedge
+# one of {modal, cerebrium} after ~10 s, at most two active jobs, first VALID
+# result wins, cancel the loser. The benchmark decides which hedge is better.
+policy:
+  primary: runpod
+  hedge_after_ms: 10000
+  hedge_choose_one_of: [modal, cerebrium]
+  max_active_jobs: 2
+  winner: first_valid_output
+
+# -------------------------------------------------------------------- SLOs
+slo:
+  primary_deadline_s: 60
+  report_deadlines_s: [30, 60, 90, 120]
+  max_miss_probability: 0.05
+
+# ------------------------------------------------------------- per-model caps
+timeouts_s:
+  moss: 300      # right-censor unfinished MOSS rounds as failures
+  qwen: 180
+  whisper: 90
+
+# ----------------------------------------------------------- stage structure
+stages:
+  moss:
+    blocks: 9               # planned 8 + one make-up block (round 13 lost its
+                            # cerebrium arm to the session-token expiry)
+    rounds_per_block: 6     # -> 54 paired three-provider cold rounds
+    calibration_rounds: 18  # first 3 blocks: freeze static policies here
+    evaluation_rounds: 36   # rounds 19-54. NOT a strict holdout: all 54 rounds
+                            # were examined during analysis (2026-07-12), so
+                            # every artifact calls this the "evaluation set".
+                            # The queue-cutover policy gets its own genuinely
+                            # untouched pre-registered validation run instead.
+    warm_companion: true    # short 2nd call to the same container -> ~48 warm obs
+    providers: [runpod, modal, cerebrium]
+  live_hedging:
+    total: 18
+    policies:
+      - { name: "runpod->modal@10s", n: 6 }
+      - { name: "runpod->cerebrium@10s", n: 6 }
+      - { name: "adaptive-two-of-three", n: 6 }
+  qwen:
+    model: Qwen/Qwen3-8B
+    cold_rounds: 12
+    live_requests: 6
+  whisper:
+    model: openai/whisper-large-v3-turbo
+    cold_rounds: 12
+
+# --------------------------------------------------------------- budget gates
+# Hard stops from docs/cost-accounting.md. The ledger raises
+# BudgetExceeded when projected cumulative spend crosses the active gate.
+budget:
+  currency: USD
+  operational_stop: 45.0     # leave $5 for delayed billing / warm leaks
+  absolute_ceiling: 50.0
+  gates:                      # cumulative projected spend must stay <= value
+    qualification_complete: 4.0
+    moss_trace_complete: 29.0
+    live_policy_complete: 37.0
+    qwen_complete: 43.0
+    whisper_complete: 45.0
+  stage_allocation:          # informational target spend per stage
+    cerebrium_qualify: 4.0
+    moss_core: 25.0
+    live_hedging: 8.0
+    qwen: 6.0
+    whisper: 2.0
+    reserve: 5.0
+
+# ------------------------------------------------ Stage 1 qualification gates
+# Cerebrium must pass ALL of these before the benchmark commits (else -> Beam).
+qualification:
+  provisioning_success_min: 5   # of 6 L40S requests get a container within 5 min
+  provisioning_attempts: 6
+  provisioning_deadline_s: 300
+  require_no_weight_download: true       # loads from pre-seeded persistent storage
+  cancel_stages: [queued, loading, generating]
+  require_cancel_terminal: true
+  require_billing_stops_on_cancel: true
+  require_scale_to_zero: true
+  max_spend: 4.0
+
+output:
+  trace_dir: traces          # JSONL lifecycle traces, one file per stage/run
+  ledger_file: traces/ledger.jsonl

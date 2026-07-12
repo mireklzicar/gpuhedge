@@ -216,3 +216,14 @@ __marimo__/
 
 # Streamlit
 .streamlit/secrets.toml
+
+# RunPod Flash build artifacts
+deploy/runpod/.flash/
+
+# Operator's real deployment values (endpoint ids, app names) — never commit.
+# The packaged src/gpuhedge/config/benchmark.yaml ships placeholders; copy
+# benchmark.example.yaml here and fill in your own.
+/config/
+
+# Runtime trace output accidentally written inside the package tree
+src/gpuhedge/traces/

@@ -1,0 +1,73 @@
+# Pre-registered live validation of the queue-state cutover policy.
+#
+# COMMITTED BEFORE ANY VALIDATION REQUEST RAN — see the git history of this
+# file. The queue-cutover policy was discovered post hoc in the 2026-07-11
+# Stage 2 traces (RunPod queue delay separates FlashBoot hits 1.1-2.0 s from
+# fresh-worker misses 8.9-27.6 s with no overlap in 54 rounds), so those 36
+# evaluation rounds are NOT its validation set. This experiment is.
+
+experiment: queue-cutover-validation
+registered_utc: "2026-07-12T11:35:00Z"
+workload: MOSS-TTS-v1.5, the Stage 2 request (see config/benchmark.yaml)
+
+policy_under_test:
+  name: queue-cutover
+  primary: runpod
+  hedge: cerebrium
+  state_machine:
+    submit_primary_at_ms: 0
+    poll_primary_status_at_ms: 2500
+    if_still_queued: cancel primary before its worker starts; launch hedge (full switch)
+    if_in_progress_or_unknown: keep primary
+    safety_hedge_at_ms: 8500      # primary running but no valid result yet
+    winner: first_valid_output
+    loser: provider-native cancel with CancellationReceipt
+
+arms:
+  - name: single-runpod           # control: no hedging
+  - name: fixed-hedge-10s         # the Stage 3 policy: runpod->cerebrium@10s
+  - name: queue-cutover           # policy under test
+
+design:
+  requests_per_arm: 20
+  requests_per_block: 5           # one arm per block for billing attribution
+  blocks_per_arm: 4               # -> 12 blocks, 60 requests
+  block_order_seed: 20260712      # random.Random(seed).shuffle(block_arms)
+  inter_request_wait_s: 130       # regular cadence, matches Stage 2
+  idle_gap_after_block: 6         # one 30-minute idle window mid-run
+  idle_gap_s: 1800
+  post_redeploy_block: 1          # endpoint redeployed immediately before the
+                                  # run (idle_timeout 60->5 s); block 1 is
+                                  # therefore labelled post-redeploy
+  timeout_s: 300                  # right-censor unfinished requests
+  runpod_idle_timeout_s: 5        # changed from 60 s so per-block balance
+                                  # deltas measure execution, not idle windows
+
+billing_protocol:
+  runpod: >
+    GraphQL clientBalance snapshot before and after every block. No other
+    endpoint, pod, or volume activity during the run. Network-volume storage
+    (~$0.011/hr for the two volumes on the account) subtracted pro-rata from
+    block deltas.
+  modal: Workspace.billing.report per-app delta (intraday), snapshot per block.
+  cerebrium: per-run run_time_ms only (no account API); dashboard
+    reconciliation after provider reporting settles.
+
+hypotheses:
+  H1_latency: queue-cutover p95 <= fixed-hedge-10s p95 (replay predicts ~22 s vs ~29 s)
+  H2_misses: queue-cutover 60-second misses = 0/20
+  H3_active_cost: mean modeled active-compute $/req is ordered
+    queue-cutover < fixed-hedge-10s < single-runpod
+  H4_billed_cost: per-request RunPod balance delta in queue-cutover blocks is
+    lower than in single-runpod blocks (queued cancels avoid worker billing)
+  H5_queued_cancel_unbilled: a RunPod job cancelled while IN_QUEUE reports no
+    (or zero) executionTime and produces no measurable balance decrement
+
+reporting:
+  - per arm - p50/p95/max, miss counts at 30/60/90/120 s with Wilson 95% intervals
+  - per arm - switch/hedge rate; cutover vs safety-hedge split for the policy arm
+  - per arm - modeled active-compute $/req AND account-billed $/req from block deltas
+  - all cancellation receipts; all raw traces committed unmodified
+exclusions: >
+  None pre-specified. Any request excluded from analysis must be reported
+  with its trace and the reason.

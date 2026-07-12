@@ -1,0 +1,109 @@
+# Pre-registered live validation of the CASCADED state-aware hedge.
+#
+# STATUS: REGISTERED, NOT YET RUN. Committed before any validation request.
+#
+# Motivation: the 2026-07 queue-cutover validation caught one request that
+# correctly abandoned the primary and then spent 104.2 s on the hedge
+# provider's own tail (benchmarks/2026-07-queue-cutover/results.md). The
+# primary can have a tail, but so can the hedge. The cascade escalates to a
+# third provider when the hedge stalls, with at most two live jobs.
+#
+# Methodology upgrades over the 2026-07 validation (both were review
+# findings there):
+#   1. The quantile estimator is preregistered (see `estimators`), and p95 is
+#      NOT a primary endpoint at n=20-30 — it is determined by 1-2 requests.
+#   2. Latency arms are interleaved at request level (requests_per_block: 1),
+#      removing the block-correlation that made request-level intervals
+#      over-optimistic. Billing attribution runs separately in pure blocks.
+
+experiment: cascade-validation
+registered_utc: "2026-07-12"     # date of registration; run date TBD
+workload: MOSS-TTS-v1.5, the Stage 2 request (see config/benchmark.yaml)
+
+policy_under_test:
+  name: cascade
+  primary: runpod
+  hedge: cerebrium
+  fallback: modal
+  state_machine:
+    submit_primary_at_ms: 0
+    poll_primary_status_at_ms: 2500
+    if_still_queued: cancel primary before its worker starts; launch hedge
+    if_in_progress_or_unknown: keep primary
+    safety_hedge_at_ms: 8500      # primary running but no valid result yet
+    escalate_at_ms: 25000         # no valid result AND <2 live attempts ->
+                                  # launch fallback (two-job cap holds)
+    winner: first_valid_output
+    losers: provider-native cancel with evidence-graded CancellationReceipt
+
+arms:
+  - name: fixed-hedge-10s         # baseline: runpod->cerebrium@10s
+  - name: queue-cutover           # the 2026-07 policy
+  - name: cascade                 # policy under test
+
+design:
+  requests_per_arm: 25
+  requests_per_block: 1           # REQUEST-LEVEL INTERLEAVING (latency arms
+  blocks_per_arm: 25              # share provider conditions)
+  block_order_seed: 20260801
+  inter_request_wait_s: 130
+  idle_gap_after_block: 40        # one 30-minute idle window mid-run
+  idle_gap_s: 1800
+  timeout_s: 300
+  traffic_regimes: >
+    The 130 s cadence covers the steady regime only. A supplementary
+    non-registered sweep should sample long-idle and post-redeploy requests,
+    because the cutover family is known to starve the primary's warm cache.
+
+primary_endpoints:               # preregistered, in order of priority
+  - median latency per arm
+  - p90 latency per arm
+  - max latency per arm
+  - count of requests exceeding 30 s / 60 s per arm (Wilson 95% intervals)
+  - mean finite latency per arm
+secondary_endpoints:
+  - p95 (BOTH estimators, see below; reported, never headlined at this n)
+  - escalation rate; escalation-conditional latency
+  - cancellation receipts by evidence level; leak count
+estimators:
+  quantile_primary: "linear interpolation (numpy default, 'linear' method)"
+  quantile_secondary: "nearest-rank via round(q*(n-1)) (reported alongside)"
+  uncertainty: >
+    Request-level Wilson intervals for miss counts; a seeded bootstrap
+    (10,000 resamples, seed 20260801) for median/p90 differences between
+    arms. No block clustering is needed for latency under request-level
+    interleaving; billing blocks are reported per block.
+
+hypotheses:
+  H1_tail_bound: cascade max latency < queue-cutover max latency, given at
+    least one hedge-tail event occurs in either arm (escalation caps the
+    hedge tail at ~escalate_at + fallback cold start; counterfactual from
+    2026-07 data ≈ 63 s median vs 104.2 s observed)
+  H2_no_regression_median: cascade median latency <= queue-cutover median
+    latency + 1 s (escalation must cost nothing on the fast path)
+  H3_escalation_rate: cascade escalates on <= 20% of requests at the 130 s
+    cadence (from replay, Cerebrium exceeds 22.5 s of hedge runtime rarely)
+  H4_misses: cascade 60 s misses <= queue-cutover 60 s misses
+  note: >
+    With Modal's observed cold distribution (p50 ~38 s), an escalation at
+    25 s lands ~63 s median — the cascade BOUNDS the tail; it does not
+    guarantee a 60 s SLO. If H1 holds but 60 s misses persist, the follow-up
+    is a faster fallback or the critical race-on-bad-state variant, not a
+    tighter escalate_at.
+
+billing_protocol: >
+  Separate pure-policy blocks (5 requests x 2 blocks per arm, distinct run)
+  for account-level attribution, as in 2026-07: GraphQL balance snapshots
+  per block for RunPod (idle_timeout 5 s), Workspace.billing.report for
+  Modal, per-run run_time_ms for Cerebrium.
+
+reporting:
+  - all primary endpoints per arm, with the preregistered estimators
+  - escalation-fired subset analyzed separately (the policy's raison d'etre)
+  - all cancellation receipts with evidence levels; all raw traces committed
+exclusions: >
+  None pre-specified. Any request excluded from analysis must be reported
+  with its trace and the reason.
+
+# To execute:
+#   gpuhedge validate --go --prereg benchmarks/2026-08-cascade/preregistration.yaml

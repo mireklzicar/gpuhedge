@@ -1,0 +1,83 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gpuhedge"
+version = "0.1.0"
+description = "Speculative execution across serverless GPU clouds: race providers, return the first valid result, cancel the loser."
+readme = "README.md"
+requires-python = ">=3.10"
+license = "Apache-2.0"
+keywords = ["serverless-gpu", "hedged-requests", "speculative-execution", "modal", "runpod", "cerebrium", "cold-start", "tts"]
+authors = [
+  {name = "Miroslav Lzicar", email = "miroslav.lzicar@deepmedchem.com"},
+]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: Developers",
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.10",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Topic :: Scientific/Engineering",
+  "Topic :: System :: Distributed Computing",
+]
+dependencies = [
+  "numpy>=1.24",
+  "requests>=2.31",
+  "PyYAML>=6.0",
+  "soundfile>=0.13",
+  "rich>=13.7",
+]
+
+# Provider SDKs are optional extras: `login-check` and trace replay work without
+# them, and CI must not need cloud SDKs to import the package.
+[project.optional-dependencies]
+modal = ["modal>=1.5"]
+runpod = ["runpod>=1.10", "runpod-flash>=1.18"]
+cerebrium = ["cerebrium>=2.5"]
+providers = ["modal>=1.5", "runpod>=1.10", "runpod-flash>=1.18", "cerebrium>=2.5"]
+# Figure/benchmark analysis (benchmarks/*/analysis.py). The documented
+# commands must work from `pip install -e ".[analysis]"` — CI regenerates
+# every figure and fails if a script breaks.
+analysis = [
+  "matplotlib>=3.8",
+  "numpy>=1.26",
+]
+dev = [
+  "build>=1.2",
+  "bump2version>=1.0",
+  "pytest>=7.0",
+  "ruff>=0.4",
+  "twine>=5.0",
+]
+
+[project.urls]
+Homepage = "https://github.com/mireklzicar/gpuhedge"
+Documentation = "https://github.com/mireklzicar/gpuhedge#readme"
+Repository = "https://github.com/mireklzicar/gpuhedge"
+Issues = "https://github.com/mireklzicar/gpuhedge/issues"
+
+[project.scripts]
+gpuhedge = "gpuhedge.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+include-package-data = true
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"gpuhedge" = ["config/*.yaml"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 100
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

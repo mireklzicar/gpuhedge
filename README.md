@@ -3,22 +3,6 @@
 **Hedge one request across RunPod, Modal, and Cerebrium to cut serverless-GPU
 cold-start latency — and pay less than the cheapest single provider.**
 
-Serverless GPU cold starts are brutally bimodal: a warm-path hit returns in
-seconds, a cold miss takes minutes, with nothing in between. GPUHedge submits
-your request to a cheap primary, watches its lifecycle state, and launches a
-backup on another cloud *only* when the primary is heading into its tail —
-then returns the first valid result and cancels the loser.
-
-On a 17 GB TTS model across three real providers, the default 10-second hedge:
-
-- **cut p95 cold-start latency 4×** — 116.6 s → 29.4 s;
-- **eliminated every deadline miss** — 11/36 → 0/36 over 60 s;
-- **cost less than running the cheapest provider alone** — −27% active-compute
-  (−11% including idle-window billing): a cancelled backup beats an un-hedged
-  100-second tail;
-- **launched a backup on only 31% of requests** — the fast path is left alone
-  the rest of the time.
-
 ![Cold-start latency by policy: single-provider tails vs. the hedged distributions](assets/gpuhedge_boxplot.png)
 
 ## Install
@@ -63,6 +47,24 @@ before wiring up an account. [Point it at real clouds ↓](#run-it-against-real-
    HTTP 200 with malformed output does not.
 5. **Cancel** every loser through its provider-native API and record an
    audited receipt (evidence level, wasted GPU-$, leak flag).
+
+## Motivation
+
+Serverless GPU cold starts are brutally bimodal: a warm-path hit returns in
+seconds, a cold miss takes minutes, with nothing in between. GPUHedge submits
+your request to a cheap primary, watches its lifecycle state, and launches a
+backup on another cloud *only* when the primary is heading into its tail —
+then returns the first valid result and cancels the loser.
+
+On a 17 GB TTS model across three real providers, the default 10-second hedge:
+
+- **cut p95 cold-start latency 4×** — 116.6 s → 29.4 s;
+- **eliminated every deadline miss** — 11/36 → 0/36 over 60 s;
+- **cost less than running the cheapest provider alone** — −27% active-compute
+  (−11% including idle-window billing): a cancelled backup beats an un-hedged
+  100-second tail;
+- **launched a backup on only 31% of requests** — the fast path is left alone
+  the rest of the time.
 
 ## Policies
 

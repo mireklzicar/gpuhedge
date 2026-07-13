@@ -129,6 +129,11 @@ async def run_hedged_request(
         "cancellation": asdict(receipt) if receipt else None,
     }
     trace.write(record)
+    # Attach the winning payload AFTER the trace write so the JSONL stays
+    # bytes-free; the Router surfaces these as RouterOutcome.audio.
+    if winner_result is not None and winner_result.audio is not None:
+        record["_winner_audio"] = winner_result.audio
+        record["_winner_sample_rate"] = winner_result.sample_rate
     return record
 
 

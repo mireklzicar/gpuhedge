@@ -46,12 +46,13 @@ ENV = {
 
 _COMMON = dict(
     workers=(0, 1),
-    # 5 s (was 60 s for Stage 2): the post-job idle window bills at the GPU
-    # rate, and the 2026-07 queue-cutover validation measures account-billed
-    # cost per block — the practical-minimum idle keeps balance deltas about
-    # execution, not idle. Stage 2 traces/tables assume the old 60 s value
-    # (config providers.runpod.idle_billed_seconds).
-    idle_timeout=5,
+    # Benchmark default 5 s (was 60 s for Stage 2): the post-job idle window
+    # bills at the GPU rate, and the 2026-07 queue-cutover validation measures
+    # account-billed cost per block — the practical-minimum idle keeps balance
+    # deltas about execution, not idle. Stage 2 traces/tables assume the old
+    # 60 s value (config providers.runpod.idle_billed_seconds). Override with
+    # GPUHEDGE_RUNPOD_IDLE at deploy time for a product warm window (e.g. 180).
+    idle_timeout=int(os.environ.get("GPUHEDGE_RUNPOD_IDLE", "5")),
     env=ENV,
     volume=VOLUME,
     execution_timeout_ms=600_000,

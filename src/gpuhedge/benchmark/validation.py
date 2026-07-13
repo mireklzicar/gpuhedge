@@ -83,6 +83,9 @@ async def single_provider_request(
         "cancellation": None,
     }
     trace.write(record)
+    if valid and result.audio is not None:
+        record["_winner_audio"] = result.audio
+        record["_winner_sample_rate"] = result.sample_rate
     return record
 
 

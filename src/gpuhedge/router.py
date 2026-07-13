@@ -41,6 +41,9 @@ class RouterOutcome:
     total_ms: float | None                 # end-to-end from request start
     hedged: bool                           # a second (or third) job was launched
     cancellation: dict[str, Any] | None    # the loser's receipt, if any
+    audio: bytes | None = None             # winning provider's decoded WAV bytes
+    sample_rate: int | None = None
+    metrics: dict[str, Any] | None = None  # winner's provider_metrics
     record: dict[str, Any] = field(repr=False, default_factory=dict)
 
     @property
@@ -83,15 +86,22 @@ class Router:
         self._ledger = CostLedger(self.config)
         self._counter = 0
 
-    async def run(self, request_id: int | None = None) -> RouterOutcome:
+    async def run(
+        self, request_id: int | None = None, *, timeout_s: float | None = None
+    ) -> RouterOutcome:
         """Route one request; first valid result wins; losers are cancelled
-        with an audited receipt (evidence level, scope, leak flag)."""
+        with an audited receipt (evidence level, scope, leak flag).
+
+        ``timeout_s`` caps each attempt's wait (per provider); omit to use the
+        model's benchmark cap from config (``timeouts_s.moss``, default 300 s).
+        A web caller typically passes a much shorter deadline."""
 
         self._counter += 1
         rid = request_id if request_id is not None else self._counter
         ctx = RoutingContext(
             config=self.config, ledger=self._ledger, trace=self._trace,
             providers=self.providers, request_id=rid, stage="router",
+            timeout_s=timeout_s,
         )
         record = await self.policy.execute(ctx)
 
@@ -102,7 +112,10 @@ class Router:
                         or record.get("safety_hedge_fired")
                         or record.get("escalation_fired")),
             cancellation=record.get("cancellation"),
-            record=record,
+            audio=record.get("_winner_audio"),
+            sample_rate=record.get("_winner_sample_rate"),
+            metrics=record.get("winner_metrics"),
+            record={k: v for k, v in record.items() if not k.startswith("_")},
         )
 
     def close(self) -> None:

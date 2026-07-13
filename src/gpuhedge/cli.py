@@ -253,7 +253,7 @@ def cmd_hedge(args: argparse.Namespace) -> int:
     finally:
         trace.close()
         ledger.close()
-    console.print_json(data=record)
+    console.print_json(data={k: v for k, v in record.items() if not k.startswith('_')})
     return 0
 
 
@@ -295,7 +295,7 @@ def cmd_cutover(args: argparse.Namespace) -> int:
         trace.close()
         ledger.close()
     record.pop("winner_metrics", None)
-    console.print_json(data=record)
+    console.print_json(data={k: v for k, v in record.items() if not k.startswith('_')})
     return 0
 
 
@@ -324,7 +324,7 @@ def cmd_cascade(args: argparse.Namespace) -> int:
         trace.close()
         ledger.close()
     record.pop("winner_metrics", None)
-    console.print_json(data=record)
+    console.print_json(data={k: v for k, v in record.items() if not k.startswith('_')})
     return 0
 
 

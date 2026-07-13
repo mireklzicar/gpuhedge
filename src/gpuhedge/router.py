@@ -4,6 +4,10 @@ result, and an audited cancellation receipt for every loser.
     from gpuhedge import Router
     from gpuhedge.policies import StateAwarePolicy
 
+    # stable mode (default): 10 s timer hedge
+    router = Router(primary="runpod", hedge="cerebrium")
+
+    # experimental mode: cut over at 2.5 s — lower typical latency, more tail risk
     router = Router(
         primary="runpod", hedge="cerebrium",
         policy=StateAwarePolicy(queue_cutover_ms=2_500, safety_hedge_ms=8_500),

@@ -22,6 +22,10 @@ validator rejects and a queued-cancel cutover.
 from gpuhedge import Router
 from gpuhedge.policies import StateAwarePolicy
 
+# stable mode (default): 10 s timer hedge
+router = Router(primary="runpod", hedge="cerebrium")
+
+# experimental mode: cut over at 2.5 s — lower typical latency, more tail risk
 router = Router(
     primary="runpod", hedge="cerebrium",
     policy=StateAwarePolicy(queue_cutover_ms=2_500, safety_hedge_ms=8_500),
@@ -56,7 +60,8 @@ your request to a cheap primary, watches its lifecycle state, and launches a
 backup on another cloud *only* when the primary is heading into its tail —
 then returns the first valid result and cancels the loser.
 
-On a 17 GB TTS model across three real providers, the default 10-second hedge:
+On a 17 GB TTS model across three real providers, the default **stable** mode — a
+10-second timer hedge:
 
 - **cut p95 cold-start latency 4×** — 116.6 s → 29.4 s;
 - **eliminated every deadline miss** — 11/36 → 0/36 over 60 s;
@@ -66,14 +71,18 @@ On a 17 GB TTS model across three real providers, the default 10-second hedge:
 - **launched a backup on only 31% of requests** — the fast path is left alone
   the rest of the time.
 
+The opt-in **experimental** mode (2.5 s queue cutover) pushes p95 lower still —
+**21.9 s (experimental)** vs 29.4 s (stable) — and costs less again, trading a
+rare tail for the lower typical latency.
+
 ## Policies
 
-| policy | when it launches a backup |
-| --- | --- |
-| `SingleProvider()` | never — the baseline |
-| `FixedHedgePolicy(hedge_after_ms)` | timer: launch the hedge at `t = d` |
-| `StateAwarePolicy(queue_cutover_ms, safety_hedge_ms)` | poll the primary's queue state; cancel it *before its worker starts* and switch if still queued |
-| `CascadePolicy(queue_cutover_ms, safety_hedge_ms, escalate_after_ms)` | cutover, then escalate to a third provider if the hedge stalls |
+| policy | mode | when it launches a backup |
+| --- | --- | --- |
+| `SingleProvider()` | — | never — the baseline |
+| `FixedHedgePolicy(hedge_after_ms)` | **stable** (default) | timer: launch the hedge at `t = d` |
+| `StateAwarePolicy(queue_cutover_ms, safety_hedge_ms)` | experimental | poll the primary's queue state; cancel it *before its worker starts* and switch if still queued |
+| `CascadePolicy(queue_cutover_ms, safety_hedge_ms, escalate_after_ms)` | experimental | cutover, then escalate to a third provider if the hedge stalls |
 
 Custom policies plug in through one method — implement `async def
 execute(self, ctx)` and `min_providers` and yours runs like the built-ins.
@@ -120,14 +129,18 @@ traces/moss_rounds.jsonl`.
 | Policy (36 evaluation rounds) | p50 | p95 | miss >60 s | $/req (active) |
 | --- | ---: | ---: | ---: | ---: |
 | single: RunPod (cheapest single provider) | 6.0 s | 116.6 s | 11/36 | $0.0114 |
-| **fixed hedge → Cerebrium @10 s** | **6.0 s** | **29.4 s** | **0/36** | **$0.0083** |
-| queue cutover @2.5 s | 6.0 s | 21.9 s | 0/36 | $0.0056 |
+| **fixed hedge → Cerebrium @10 s (stable)** | **6.0 s** | **29.4 s** | **0/36** | **$0.0083** |
+| queue cutover @2.5 s (experimental) | 6.0 s | 21.9 s | 0/36 | $0.0056 |
 
 Full method, figures, cost models, and a **pre-registered live validation**
 (with account-level billing deltas and forced loser-cancellations on all three
-providers) are in [`benchmarks/`](benchmarks/). The validation is reported
-honestly, including where a hedge-provider tail made the cutover's p95 win
-estimator-sensitive at n=20 — the case that motivated `CascadePolicy`.
+providers) are in [`benchmarks/`](benchmarks/). Live, **experimental** mode won the
+typical case outright — median 22.6 s vs 29.8 s (stable), p90 25.8 s vs 30.8 s —
+and cost less on the primary; the trade is tail risk, where one run abandoned its
+queued primary and then hit the hedge provider's own 104 s tail. That case is
+exactly what `CascadePolicy` (experimental) escalates past. Choose **stable** when
+a deadline miss is unacceptable, **experimental** when you want the lower typical
+latency and can absorb a rare tail.
 
 ## Docs
 

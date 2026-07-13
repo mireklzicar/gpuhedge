@@ -81,7 +81,9 @@ class SingleProvider:
 
 @dataclass(frozen=True)
 class FixedHedgePolicy:
-    """Launch the hedge if no valid result after ``hedge_after_ms``."""
+    """Launch the hedge if no valid result after ``hedge_after_ms``.
+
+    Stable mode — the Router default."""
 
     hedge_after_ms: int = 10_000
     min_providers = 2
@@ -100,7 +102,9 @@ class FixedHedgePolicy:
 class StateAwarePolicy:
     """Poll the primary's lifecycle state at ``queue_cutover_ms``: still
     queued -> cancel it before its worker starts and switch to the hedge;
-    running -> keep it, with a safety hedge at ``safety_hedge_ms``."""
+    running -> keep it, with a safety hedge at ``safety_hedge_ms``.
+
+    Experimental mode: lower typical latency, more tail risk."""
 
     queue_cutover_ms: int = 2_500
     safety_hedge_ms: int = 8_500

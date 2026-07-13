@@ -19,7 +19,7 @@ On a 17 GB TTS model across three real providers, the default 10-second hedge:
 - **launched a backup on only 31% of requests** — the fast path is left alone
   the rest of the time.
 
-![queue delay predicts the tail](benchmarks/2026-07-moss/figures/fig1_queue_delay_hero.png)
+![Cold-start latency by policy: single-provider tails vs. the hedged distributions](assets/gpuhedge_boxplot.png)
 
 ## Install
 

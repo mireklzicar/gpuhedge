@@ -62,6 +62,11 @@ for fixed hedging, but also one 104.2 s Cerebrium outlier; see
 
 ![fig3](figures/fig3_cost_vs_misses.png)
 
+The logo-free Matplotlib source for the manually polished README hero is
+regenerated from the same traces as `fig5_gpuhedge_boxplot.png` and `.svg`:
+
+![fig5](figures/fig5_gpuhedge_boxplot.png)
+
 ## Live hedging & cancellation (18 requests)
 
 All 18 returned valid audio; end-to-end, 17/18 within 60 s (one Modal-hedge

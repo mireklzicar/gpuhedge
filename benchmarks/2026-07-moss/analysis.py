@@ -8,11 +8,13 @@ Figures:
   2 cold_start_matrix     rounds x providers (+ replayed GPUHedge column)
   3 cost_vs_misses        modeled billed $/req vs 60 s miss rate per policy
   4 cancel_waterfall      winner-valid -> cancel sent -> ack -> terminal
+  5 gpuhedge_boxplot      source plot for the edited README hero image
 """
 
 from __future__ import annotations
 
 import argparse
+import inspect
 import json
 import math
 from pathlib import Path
@@ -47,6 +49,19 @@ def _save(fig, out: Path, name: str) -> None:
         fig.savefig(out / f"{name}.{ext}")
     plt.close(fig)
     print(f"  wrote {out / name}.png/.svg")
+
+
+def _queue_cutover_latency(round_) -> float:
+    """Replay the documented 2.5 s cutover / 8.5 s safety-hedge policy."""
+
+    queue_s = round_.queue_delay_s.get("runpod", INF)
+    runpod_s = round_.latency.get("runpod", INF)
+    cerebrium_s = round_.latency.get("cerebrium", INF)
+    if queue_s > 2.5:
+        return 2.5 + cerebrium_s
+    if runpod_s <= 8.5:
+        return runpod_s
+    return min(runpod_s, 8.5 + cerebrium_s)
 
 
 # ------------------------------------------------------------------- figure 1
@@ -92,15 +107,7 @@ def fig_cold_start_matrix(config, rounds, out: Path) -> None:
         for j, p in enumerate(providers):
             v = r.latency.get(p, INF)
             lat[i, j] = np.nan if math.isinf(v) else v
-        q = r.queue_delay_s.get("runpod", INF)
-        rp = r.latency.get("runpod", INF)
-        rh = r.latency.get("cerebrium", INF)
-        if q > 2.5:
-            v = 2.5 + rh
-        elif rp <= 8.5:
-            v = rp
-        else:
-            v = min(rp, 8.5 + rh)
+        v = _queue_cutover_latency(r)
         lat[i, -1] = np.nan if math.isinf(v) else v
 
     fig, ax = plt.subplots(figsize=(6.4, 8.4))
@@ -160,6 +167,139 @@ def fig_cost_vs_misses(config, rounds, out: Path) -> None:
                  "benchmarks/2026-07-queue-cutover", fontsize=10)
     ax.set_ylim(-0.03, max(y for _, y, *_ in pts) * 1.25 + 0.02)
     _save(fig, out, "fig3_cost_vs_misses")
+
+
+# ------------------------------------------------------------------- figure 5
+def fig_gpuhedge_boxplot(config, rounds, out: Path) -> None:
+    """Rebuild the analytical source for ``assets/gpuhedge_boxplot.png``.
+
+    The README asset was manually polished and given provider logos after
+    export. This figure deliberately remains logo-free so the complete source
+    chart is reproducible from the committed benchmark traces alone.
+    """
+
+    evaluation = [r for r in rounds if r.round_id > 18]
+    series = [
+        [r.latency["runpod"] for r in evaluation],
+        [r.latency["modal"] for r in evaluation],
+        [r.latency["cerebrium"] for r in evaluation],
+        [_queue_cutover_latency(r) for r in evaluation],
+    ]
+    stats = [
+        evaluate_single(config, evaluation, "runpod", [60]),
+        evaluate_single(config, evaluation, "modal", [60]),
+        evaluate_single(config, evaluation, "cerebrium", [60]),
+        evaluate_queue_cutover(config, evaluation, "runpod", "cerebrium", [60]),
+    ]
+    labels = [
+        "RunPod\nsingle provider",
+        "Modal\nsingle provider",
+        "Cerebrium\nsingle provider",
+        "GPUHedge\nqueue cutover @2.5 s",
+    ]
+    positions = [4, 3, 2, 1]
+    colors = ["#5e6977", "#566271", "#697481", "#007f7a"]
+
+    fig, ax = plt.subplots(figsize=(12.8, 7.2))
+    fig.subplots_adjust(left=0.16, right=0.73, top=0.80, bottom=0.20)
+    orientation = (
+        {"orientation": "horizontal"}
+        if "orientation" in inspect.signature(ax.boxplot).parameters
+        else {"vert": False}
+    )
+    boxes = ax.boxplot(
+        series,
+        positions=positions,
+        widths=0.48,
+        whis=1.5,
+        showfliers=False,
+        patch_artist=True,
+        **orientation,
+    )
+    for index, color in enumerate(colors):
+        boxes["boxes"][index].set(
+            facecolor=color, edgecolor=color, alpha=0.26, linewidth=1.3,
+        )
+        boxes["medians"][index].set(color=color, linewidth=2.3)
+        for artist in boxes["whiskers"][2 * index:2 * index + 2]:
+            artist.set(color=color, linewidth=1.45)
+        for artist in boxes["caps"][2 * index:2 * index + 2]:
+            artist.set(color=color, linewidth=1.45)
+
+    rng = np.random.default_rng(20260713)
+    for values, y, color, result in zip(
+        series, positions, colors, stats, strict=True,
+    ):
+        jitter = rng.uniform(-0.11, 0.11, len(values))
+        ax.scatter(
+            values, y + jitter, s=24, color=color, alpha=0.33,
+            edgecolors="none", zorder=3,
+        )
+        ax.scatter(
+            result.p95_s, y, marker="D", s=90, color=color,
+            edgecolors="white", linewidths=0.9, zorder=5,
+        )
+
+    ax.axvline(60, color="#526173", linestyle="--", linewidth=1.5, zorder=1)
+    ax.text(61, 4.47, "60 s deadline", color="#526173", fontsize=10.5)
+    ax.set_xlim(0, 126)
+    ax.set_ylim(0.5, 4.5)
+    ax.set_yticks(positions)
+    ax.set_yticklabels(labels)
+    ax.set_xlabel("End-to-end cold-start latency (seconds)")
+    ax.xaxis.grid(True, color="#b0b0b0", alpha=0.22)
+    ax.yaxis.grid(False)
+    ax.spines[["top", "right", "left"]].set_visible(False)
+    ax.tick_params(axis="y", length=0, pad=14)
+    gpuhedge_tick = ax.get_yticklabels()[-1]
+    gpuhedge_tick.set(color=colors[-1], fontweight="bold")
+
+    fig.suptitle(
+        "Cold-start latency: three providers vs GPUHedge",
+        x=0.05, y=0.96, ha="left", fontsize=22, fontweight="bold",
+    )
+    ax.set_title(
+        "Same 36 evaluation rounds (19–54); every dot is one paired request",
+        loc="left", color="#526173", fontsize=13, pad=18,
+    )
+
+    columns = [(1.06, "p50"), (1.18, "p95"), (1.30, "max"), (1.42, ">60 s")]
+    for x, heading in columns:
+        ax.text(
+            x, 1.00, heading, transform=ax.transAxes, ha="center", va="bottom",
+            color="#7b8794", fontweight="bold", clip_on=False,
+        )
+    for y, result, color in zip(positions, stats, colors, strict=True):
+        row_color = color if y == 1 else "#0f1f33"
+        row_weight = "bold" if y == 1 else "normal"
+        row = [
+            f"{result.p50_s:.1f}s",
+            f"{result.p95_s:.1f}s",
+            f"{result.max_s:.1f}s",
+            f"{result.miss_counts[60]}/{result.n}",
+        ]
+        y_axes = (y - 0.5) / 4
+        for (x, _), value in zip(columns, row, strict=True):
+            ax.text(
+                x, y_axes, value, transform=ax.transAxes, ha="center", va="center",
+                color=row_color, fontfamily="monospace", fontweight=row_weight,
+                fontsize=11.5, clip_on=False,
+            )
+
+    fig.text(
+        0.05, 0.075,
+        "Box = Q1–Q3 · center line = median · whiskers = 1.5×IQR · "
+        "dots = all observations · ◆ = repo p95 estimator",
+        color="#7b8794", fontsize=9.5,
+    )
+    fig.text(
+        0.05, 0.045,
+        "GPUHedge is not the lowest p95 (Cerebrium is 20.2 s vs 21.9 s); "
+        "it combines a 6.0 s median with the lowest maximum (22.3 s) and "
+        "0/36 deadline misses.",
+        color="#526173", fontsize=9.5,
+    )
+    _save(fig, out, "fig5_gpuhedge_boxplot")
 
 
 # ------------------------------------------------------------------- figure 4
@@ -229,6 +369,7 @@ def main() -> None:
     fig_cold_start_matrix(config, rounds, out)
     fig_cost_vs_misses(config, rounds, out)
     fig_cancel_waterfall(trace_dir, out)
+    fig_gpuhedge_boxplot(config, rounds, out)
 
 
 if __name__ == "__main__":

@@ -39,6 +39,9 @@ jobs:
           python -m gpuhedge plan
           python -m gpuhedge config
 
+      - name: Demo smoke test (no-cloud onboarding command)
+        run: python -m gpuhedge demo --requests 2
+
   figures-and-analysis:
     runs-on: ubuntu-latest
     needs: lint-and-test

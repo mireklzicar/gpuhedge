@@ -106,7 +106,7 @@ svg.append(f'<line x1="{x(60):.1f}" y1="{plot_top - 14}" x2="{x(60):.1f}" y2="{p
 svg.append(f'<text x="{x(60) + 10:.1f}" y="{plot_top - 2}" class="deadline">60 s deadline</text>')
 
 # column headers
-for cx, name in zip(COLS_X, ["p50", "p95", "max", "&gt;60 s"]):
+for cx, name in zip(COLS_X, ["p50", "p95", "max", "&gt;60 s"], strict=True):
     svg.append(f'<text x="{cx}" y="{plot_top - 2}" text-anchor="end" class="colhead">{name}</text>')
 
 for i, (key, name, sub, col, logo) in enumerate(ROWS):
@@ -145,7 +145,7 @@ for i, (key, name, sub, col, logo) in enumerate(ROWS):
 
     # stat columns
     val_cls = "val hero" if hero else "val"
-    for cx, v in zip(COLS_X, [f'{st["p50"]:.1f}&thinsp;s', f'{st["p95"]:.1f}&thinsp;s', f'{st["mx"]:.1f}&thinsp;s', f'{st["miss"]}/36']):
+    for cx, v in zip(COLS_X, [f'{st["p50"]:.1f}&thinsp;s', f'{st["p95"]:.1f}&thinsp;s', f'{st["mx"]:.1f}&thinsp;s', f'{st["miss"]}/36'], strict=True):
         svg.append(f'<text x="{cx}" y="{cy + 7}" text-anchor="end" class="{val_cls}">{v}</text>')
 
 # annotation over the RunPod tail

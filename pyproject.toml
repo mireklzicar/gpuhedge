@@ -81,3 +81,8 @@ target-version = "py310"
 
 [tool.ruff.lint]
 select = ["E", "F", "I", "UP", "B"]
+
+# One-off asset/figure generators build long inline SVG/HTML f-strings where
+# wrapping hurts readability; keep every other rule (unused imports, bugbear…).
+[tool.ruff.lint.per-file-ignores]
+"scripts/*" = ["E501"]
